@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: "", 
-            password: "", // come back and add other fields for signup
+            password: "", 
             first_name: "",
             last_name: ""
         }
@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state) //is this right for passing in a user?
+        this.props.processForm(this.state)
     }
 
     renderErrors() {
@@ -34,13 +34,8 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        return(
+        const display = this.props.formType === "Sign In to an account" ? (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>Welcome to EmptyChairs</h1> 
-                    <h2>Please enter your details to {this.props.formType}.</h2>
-                    <h3>Or click here to {this.props.link}</h3>
-                    {this.renderErrors()}
                     <label>Username
                         <input 
                             type="text" 
@@ -56,6 +51,51 @@ class SessionForm extends React.Component {
                             onChange={this.handleInput("password")}
                             />
                     </label>
+            </div>
+        ) : (
+            <div>
+                    <label>First Name
+                        <input 
+                            type="text" 
+                            value={this.state.first_name}
+                            onChange={this.handleInput("first_name")}
+                            />
+                    </label>
+                    <br />
+                    <label>Last Name
+                        <input 
+                            type="text" 
+                            value={this.state.last_name}
+                            onChange={this.handleInput("last_name")}
+                            />
+                    </label>
+                    <br />
+                    <label>Username
+                        <input 
+                            type="text" 
+                            value={this.state.username}
+                            onChange={this.handleInput("username")}
+                            />
+                    </label>
+                    <br />
+                    <label>Password
+                        <input 
+                            type="password" 
+                            value={this.state.password}
+                            onChange={this.handleInput("password")}
+                            />
+                    </label>
+            </div>
+        )
+
+        return(
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <h1>Welcome to EmptyChairs</h1> 
+                    <h2>Please enter your details to {this.props.formType}.</h2>
+                    <h3>Or click here to {this.props.link}</h3>
+                    {this.renderErrors()}
+                    <div>{display}</div>
                     <br />
                     <button>{this.props.formType}</button>
                 </form>
