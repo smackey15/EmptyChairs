@@ -15,7 +15,7 @@ const App = () => (
             {/* above link is not routed yet */}
             <NavBarContainer />
         </header>
-        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signin" component={LoginFormContainer} />
         <Route path="/signup" component={SignupFormContainer} />
 
     </div>

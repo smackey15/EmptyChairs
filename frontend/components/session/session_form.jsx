@@ -36,14 +36,14 @@ class SessionForm extends React.Component {
     render() {
         const display = this.props.formType === "Sign In to an account" ? (
             <div>
-                    <label>
+                    {/* <label> MAY REMOVE ALL LABEL TAGS IF USING "value" KEY INSTEAD, TBD  */}  
                         <input 
                             type="text" 
                             value={this.state.username}
                             onChange={this.handleInput("username")}
                             className = "session-input"
                             />
-                    </label>
+                    {/* </label> */}
                     <br />
                     <br />
                     <label>
@@ -52,7 +52,6 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={this.handleInput("password")}
                             className = "session-input"
-
                             />
                     </label>
             </div>
@@ -64,7 +63,6 @@ class SessionForm extends React.Component {
                             value={this.state.first_name}
                             onChange={this.handleInput("first_name")}
                             className = "session-input"
-
                             />
                     </label>
                     <br />
@@ -75,7 +73,6 @@ class SessionForm extends React.Component {
                             value={this.state.last_name}
                             onChange={this.handleInput("last_name")}
                             className = "session-input"
-
                             />
                     </label>
                     <br />
@@ -86,7 +83,6 @@ class SessionForm extends React.Component {
                             value={this.state.username}
                             onChange={this.handleInput("username")}
                             className = "session-input"
-
                             />
                     </label>
                     <br />
@@ -97,7 +93,6 @@ class SessionForm extends React.Component {
                             value={this.state.password}
                             onChange={this.handleInput("password")}
                             className = "session-input"
-
                             />
                     </label>
             </div>
@@ -107,10 +102,12 @@ class SessionForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h1>Welcome to EmptyChairs</h1> 
-                    <h2>Please enter your details to {this.props.formType}.</h2>
-                    <h3>Or click here to {this.props.link}</h3>
+                        <h2>Please enter your details to {this.props.formType}.</h2>
+                            <h3>Or click here to {this.props.link}</h3>
                     {this.renderErrors()}
+                    
                     <div>{display}</div>
+                    
                     <br />
                     <button className="session-button">{this.props.formType}</button>
                 </form>

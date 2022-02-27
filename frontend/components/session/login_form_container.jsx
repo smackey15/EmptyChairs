@@ -5,8 +5,8 @@ import { login } from "../../actions/session_actions";
 import SessionForm from "./session_form"
 import {Link} from "react-router-dom";
 
-const mapStateToProps = (state, ownProps) => ({ //?
-    errors: state.errors.session,               //?
+const mapStateToProps = (state, ownProps) => ({ 
+    errors: state.errors.session,               
     formType: "Sign In to an account",
     link: <Link to="/signup" className="session-switch-link">Sign Up</Link>
 

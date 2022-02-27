@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const mapStateToProps = (state, ownProps) => ({ //?
     errors: state.errors.session,               //?
     formType: "Create an account",
-    link: <Link to="/login" className="session-switch-link">Sign In</Link>
+    link: <Link to="/signin" className="session-switch-link">Sign In</Link>
 
 })
 

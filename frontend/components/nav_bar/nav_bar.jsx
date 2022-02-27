@@ -14,7 +14,7 @@ const NavBar = ({ currentUser, logout }) => {
                 <Link to="/signup" className="signup-link">Sign up</Link>
             </button>
             <button className="signin-button">
-                <Link to="/login" className="signin-link">Sign in</Link>
+                <Link to="/signin" className="signin-link">Sign in</Link>
             </button>
         </div>
         // above links are not routed yet
