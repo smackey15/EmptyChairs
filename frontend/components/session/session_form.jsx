@@ -4,10 +4,10 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "Username", 
-            password: "Password", 
-            first_name: "First Name",
-            last_name: "Last Name"
+            username: "", 
+            password: "", 
+            first_name: "",
+            last_name: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -39,7 +39,8 @@ class SessionForm extends React.Component {
                     {/* <label> MAY REMOVE ALL LABEL TAGS IF USING "value" KEY INSTEAD, TBD  */}  
                         <input 
                             type="text" 
-                            value={this.state.username}
+                            // value={this.state.username}
+                            placeholder="Username"
                             onChange={this.handleInput("username")}
                             className = "session-input"
                             />
@@ -49,7 +50,8 @@ class SessionForm extends React.Component {
                     <label>
                         <input 
                             type="password" 
-                            value={this.state.password}
+                            // value={this.state.password}
+                            placeholder="Password"
                             onChange={this.handleInput("password")}
                             className = "session-input"
                             />
@@ -60,7 +62,8 @@ class SessionForm extends React.Component {
                     <label>
                         <input 
                             type="text" 
-                            value={this.state.first_name}
+                            // value={this.state.first_name}
+                            placeholder="First Name"
                             onChange={this.handleInput("first_name")}
                             className = "session-input"
                             />
@@ -70,7 +73,8 @@ class SessionForm extends React.Component {
                     <label>
                         <input 
                             type="text" 
-                            value={this.state.last_name}
+                            // value={this.state.last_name}
+                            placeholder="Last Name"
                             onChange={this.handleInput("last_name")}
                             className = "session-input"
                             />
@@ -80,7 +84,8 @@ class SessionForm extends React.Component {
                     <label>
                         <input 
                             type="text" 
-                            value={this.state.username}
+                            // value={this.state.username}
+                            placeholder="Username"
                             onChange={this.handleInput("username")}
                             className = "session-input"
                             />
@@ -90,7 +95,8 @@ class SessionForm extends React.Component {
                     <label>
                         <input 
                             type="password" 
-                            value={this.state.password}
+                            // value={this.state.password}
+                            placeholder="Password"
                             onChange={this.handleInput("password")}
                             className = "session-input"
                             />
@@ -107,7 +113,7 @@ class SessionForm extends React.Component {
                     {this.renderErrors()}
                     
                     <div>{display}</div>
-                    
+
                     <br />
                     <button className="session-button">{this.props.formType}</button>
                 </form>

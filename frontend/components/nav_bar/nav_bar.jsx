@@ -17,7 +17,6 @@ const NavBar = ({ currentUser, logout }) => {
                 <Link to="/signin" className="signin-link">Sign in</Link>
             </button>
         </div>
-        // above links are not routed yet
     )
 
 return (

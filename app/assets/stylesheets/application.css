@@ -32,7 +32,7 @@
  }
 
  .signup-button {
-     background-color: teal;
+     background-color: #247f9e;
      height: 35px;
      width: 80px; 
      border-radius: 5px; 
@@ -61,7 +61,7 @@
     height: 35px;
     width: 175px;
     color: whitesmoke;
-    background-color: red;
+    background-color: #da3743;
     border-radius: 5px;
 }
 
@@ -72,5 +72,5 @@
 
 .session-switch-link {
     text-decoration: none;
-    color: red;
+    color: #da3743;
 }
