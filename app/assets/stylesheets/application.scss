@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ body {
+     font-family: Arial, Helvetica, sans-serif;
+     color: darkslategray;
+     padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 10px;
+     padding-bottom: 10px;
+ }
+
+ h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+ }
+
+ h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+ }
+
+ h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+ }
+
+//  .header {
+//     display: flex;
+//     justify-content: space-between;
+//  }
+
+//  .nav-bar-link {
+//      color: darkslategray;
+//      text-decoration: none;
+//      font-size: 12px;
+//      font-family: Arial, Helvetica, sans-serif;
+//     // font-family: 'Helvetica';
+//  }
+
+//  .signup-button {
+//      background-color: #247f9e;
+//      height: 35px;
+//      width: 80px; 
+//      border-radius: 5px; 
+//      margin: 5px 5px 5px 5px;
+//  }
+
+//  .signup-link {
+//     color: whitesmoke;
+//     text-decoration: none;
+// }
+
+// .signin-button {
+//     background-color: whitesmoke;
+//     height: 35px;
+//     width: 80px;
+//     border-radius: 5px;
+//     /* margin: 5px 5px 5px 5px; */
+// }
+
+// .signin-link {
+//     color: black;
+//     text-decoration: none;
+// }
+
+// .session-button {
+//     height: 35px;
+//     width: 175px;
+//     color: whitesmoke;
+//     background-color: #da3743;
+//     border-radius: 5px;
+// }
+
+// .session-input {
+//     height: 35px;
+//     width: 175px;
+// }
+
+// .session-switch-link {
+//     text-decoration: none;
+//     color: #da3743;
+// }

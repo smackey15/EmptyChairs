@@ -10,7 +10,7 @@ const App = () => (
     <div>
         <header className="header">
             <Link to="/" className="nav-bar-link">
-                <h1>EmptyChairs®</h1> 
+                <h1 className="h1">EmptyChairs®</h1> 
             </Link>
             <NavBarContainer />
         </header>
