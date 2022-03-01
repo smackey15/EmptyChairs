@@ -92,13 +92,14 @@ class SessionForm extends React.Component {
                     <h1>Welcome to EmptyChairs</h1> 
                         <h2>Please enter your details to {this.props.formType}.</h2>
                             <h3>Or click here to {this.props.otherForm}</h3>
-                            <div onClick={this.props.closeModal}>X</div>
+                            <div className="modal-x" onClick={this.props.closeModal}>X</div>
                     {this.renderErrors()}
                     
-                    <div>{display}</div>
+                    <div className="form-inputs">{display}
 
                     <br />
                     <button className="session-button">{this.props.formType}</button>
+                    </div>
                 </form>
             </div>
         )

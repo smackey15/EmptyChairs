@@ -1,6 +1,6 @@
 .session-button {
-    height: 35px;
-    width: 175px;
+    height: 40px;
+    width: 97.5%;
     color: whitesmoke;
     background-color: #da3743;
     border-radius: 5px;
@@ -8,10 +8,27 @@
 
 .session-input {
     height: 35px;
-    width: 175px;
+    width: 95%;
 }
 
-.session-switch-link {
-    text-decoration: none;
-    color: #da3743;
+.session-switch-button {
+    color: whitesmoke;
+    background-color: #da3743;
 }
+
+.modal-x {
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-weight: 300;
+}
+
+.form-inputs {
+    zoom: 125%;
+}
+
+// .session-switch-link {
+//     text-decoration: none;
+//     color: #da3743;
+// }
