@@ -10,7 +10,12 @@ class SessionForm extends React.Component {
             last_name: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
         // this.handleEnter = this.handleEnter.bind(this);
+    }
+
+    handleDemo() {
+        this.setState({ username: "hungry", password: "foodie"})
     }
 
     handleInput(type) {
@@ -58,6 +63,9 @@ class SessionForm extends React.Component {
                     onChange={this.handleInput("password")}
                     className = "session-input"
                     />
+            <br />
+            <br />
+                <button onClick={this.handleDemo}>Demo sigin</button>
             </div>
         ) : (
             <div>
