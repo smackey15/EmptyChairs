@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state)
+        this.props.processForm(this.state).then(this.props.closeModal); //added modal
     }
 
     renderErrors() {
@@ -36,71 +36,53 @@ class SessionForm extends React.Component {
     render() {
         const display = this.props.formType === "Sign In to an account" ? (
             <div>
-                    {/* <label> MAY REMOVE ALL LABEL TAGS IF USING "value" KEY INSTEAD, TBD  */}  
-                        <input 
-                            type="text" 
-                            // value={this.state.username}
-                            placeholder="Username"
-                            onChange={this.handleInput("username")}
-                            className = "session-input"
-                            />
-                    {/* </label> */}
-                    <br />
-                    <br />
-                    <label>
-                        <input 
-                            type="password" 
-                            // value={this.state.password}
-                            placeholder="Password"
-                            onChange={this.handleInput("password")}
-                            className = "session-input"
-                            />
-                    </label>
+                <input 
+                    type="text" 
+                    placeholder="Username"
+                    onChange={this.handleInput("username")}
+                    className = "session-input"
+                    />
+            <br />
+            <br />
+                <input 
+                    type="password" 
+                    placeholder="Password"
+                    onChange={this.handleInput("password")}
+                    className = "session-input"
+                    />
             </div>
         ) : (
             <div>
-                    <label>
-                        <input 
-                            type="text" 
-                            // value={this.state.first_name}
-                            placeholder="First Name"
-                            onChange={this.handleInput("first_name")}
-                            className = "session-input"
-                            />
-                    </label>
-                    <br />
-                    <br />
-                    <label>
-                        <input 
-                            type="text" 
-                            // value={this.state.last_name}
-                            placeholder="Last Name"
-                            onChange={this.handleInput("last_name")}
-                            className = "session-input"
-                            />
-                    </label>
-                    <br />
-                    <br />
-                    <label>
-                        <input 
-                            type="text" 
-                            // value={this.state.username}
-                            placeholder="Username"
-                            onChange={this.handleInput("username")}
-                            className = "session-input"
-                            />
-                    </label>
-                    <br />
-                    <br />
-                    <label>
-                        <input 
-                            type="password" 
-                            // value={this.state.password}
-                            placeholder="Password"
-                            onChange={this.handleInput("password")}
-                            className = "session-input"
-                            />
-                    </label>
+                <input 
+                    type="text" 
+                    placeholder="First Name"
+                    onChange={this.handleInput("first_name")}
+                    className = "session-input"
+                    />
+            <br />
+            <br />
+                <input 
+                    type="text" 
+                    placeholder="Last Name"
+                    onChange={this.handleInput("last_name")}
+                    className = "session-input"
+                    />
+            <br />
+            <br />
+                <input 
+                    type="text" 
+                    placeholder="Username"
+                    onChange={this.handleInput("username")}
+                    className = "session-input"
+                    />
+            <br />
+            <br />
+                <input 
+                    type="password" 
+                    placeholder="Password"
+                    onChange={this.handleInput("password")}
+                    className = "session-input"
+                    />
             </div>
         )
 
@@ -109,7 +91,8 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Welcome to EmptyChairs</h1> 
                         <h2>Please enter your details to {this.props.formType}.</h2>
-                            <h3>Or click here to {this.props.link}</h3>
+                            <h3>Or click here to {this.props.otherForm}</h3>
+                            <div onClick={this.props.closeModal}>X</div>
                     {this.renderErrors()}
                     
                     <div>{display}</div>
