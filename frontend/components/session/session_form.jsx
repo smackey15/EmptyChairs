@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
             last_name: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleEnter = this.handleEnter.bind(this);
     }
 
     handleInput(type) {
@@ -20,6 +21,13 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.processForm(this.state).then(this.props.closeModal); //added modal
     }
+
+    // handleEnter(e) {
+    //     e.preventDefault();
+    //     if(e.keyCode === 13) {
+    //         this.props.processForm(this.state).then(this.props.closeModal); //added modal
+    //     }
+    // }
 
     renderErrors() {
         return(
