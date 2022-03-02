@@ -14,9 +14,15 @@ class SessionForm extends React.Component {
         // this.handleEnter = this.handleEnter.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
+    // remove eventually? //
     handleDemo() {
         this.setState({ username: "hungry", password: "foodie"})
     }
+    // remove eventually? //
 
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
@@ -28,9 +34,8 @@ class SessionForm extends React.Component {
     }
 
     // handleEnter(e) {
-    //     e.preventDefault();
     //     if(e.keyCode === 13) {
-    //         this.props.processForm(this.state).then(this.props.closeModal); //added modal
+    //         this.handleSubmit();
     //     }
     // }
 
@@ -66,6 +71,7 @@ class SessionForm extends React.Component {
             <br />
             <br />
                 <button onClick={this.handleDemo}>Demo sigin</button>
+                {/* remove above eventually? */}
             </div>
         ) : (
             <div>
@@ -107,14 +113,18 @@ class SessionForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <h1>Welcome to EmptyChairs</h1> 
                         <h2>Please enter your details to {this.props.formType}.</h2>
-                            <h3>Or click here to {this.props.otherForm}</h3>
+                            {/* <h3>Or click here to {this.props.otherForm}</h3> */}
                             <div className="modal-x" onClick={this.props.closeModal}>X</div>
                     {this.renderErrors()}
                     
                     <div className="form-inputs">{display}
 
+
                     <br />
                     <button className="session-button">{this.props.formType}</button>
+                    <br />
+                    {/* <button onClick={this.handleDemo}>Demo sigin</button> */}
+
                     </div>
                 </form>
             </div>
