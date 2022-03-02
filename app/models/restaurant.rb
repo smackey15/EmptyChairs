@@ -1,2 +1,8 @@
 class Restaurant < ApplicationRecord
+    validates :name, :overview, :address, :menu, presence: true
+    validates :name, uniqueness: true
+
+    # ASSOCIATIONS:
+    # has_many reservations, reviews ## add after those tables are created
+    # has_many saves through users?
 end
