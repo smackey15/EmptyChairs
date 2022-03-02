@@ -8,7 +8,7 @@ const receiveRestaurants = (restaurants) => ({
 })
 
 const receiveRestaurant = (restaurant) => ({
-    type: RECEIVE_RESTAURANTS,
+    type: RECEIVE_RESTAURANT,
     restaurant
 })
 
