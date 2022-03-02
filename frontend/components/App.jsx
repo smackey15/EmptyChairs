@@ -6,12 +6,14 @@ import NavBarContainer from "./nav_bar/nav_bar_container"
 import LoginFormContainer from "./session/login_form_container"
 import SignupFormContainer from "./session/signup_form_container"
 import Modal from "./modal/modal"
+import { FaChair } from 'react-icons/fa';
 
 const App = () => (
     <div>
         <Modal />
         <header className="header">
             <Link to="/" className="nav-bar-link">
+                <FaChair className="logo" /> 
                 <h1>EmptyChairs®</h1> 
             </Link>
             <NavBarContainer />

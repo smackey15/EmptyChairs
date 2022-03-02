@@ -1,12 +1,18 @@
 import React from "react";
 // import {Link} from "react-router-dom";
+import {HiOutlineUser} from "react-icons/hi"
+import {AiOutlineCalendar} from "react-icons/ai"
+import {FaRegBell} from "react-icons/fa"
 
 const NavBar = ({ currentUser, logout, openModal }) => {            
     const display = currentUser ? (
-        <div>
-            <h2>Hello, {currentUser.first_name}!</h2>
+        <div className="icons">
+            {/* <h2>Hello, {currentUser.first_name}!</h2> */}
+            <HiOutlineUser />
+            <AiOutlineCalendar />
+            <FaRegBell />
             <button onClick={logout}>Logout</button>
-            {/* the above h2 needs to show a person icon with link to user profile page */}
+            {/* above icons needs to be dropdowns with hover message */}
         </div>
     ) : (
         <div>
