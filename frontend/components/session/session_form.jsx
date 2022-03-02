@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
-        // this.handleEnter = this.handleEnter.bind(this);
     }
 
     componentWillUnmount() {
@@ -32,12 +31,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.processForm(this.state).then(this.props.closeModal); //added modal
     }
-
-    // handleEnter(e) {
-    //     if(e.keyCode === 13) {
-    //         this.handleSubmit();
-    //     }
-    // }
 
     renderErrors() {
         return(
@@ -110,7 +103,7 @@ class SessionForm extends React.Component {
 
         return(
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}>
                     <h1>Welcome to EmptyChairs</h1> 
                         <h2>Please enter your details to {this.props.formType}.</h2>
                             {/* <h3>Or click here to {this.props.otherForm}</h3> */}
@@ -123,7 +116,6 @@ class SessionForm extends React.Component {
                     <br />
                     <button className="session-button">{this.props.formType}</button>
                     <br />
-                    {/* <button onClick={this.handleDemo}>Demo sigin</button> */}
 
                     </div>
                 </form>
