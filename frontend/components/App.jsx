@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import { AuthRoute } from "../util/route_util";
 // import GreetingContainer from "./greeting/greeting_container";
 import NavBarContainer from "./nav_bar/nav_bar_container"
@@ -20,10 +20,10 @@ const App = () => (
             </Link>
             <NavBarContainer />
         </header>
-
-        <RestaurantIndexContainer />
         
-        {/* <Route exact patch="/restaurants/:id" component={RestaurantShowContainer} /> */}
+        <Route exact path="/" component={RestaurantIndexContainer} />
+
+        <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         
         {/* <AuthRoute path="/signin" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}

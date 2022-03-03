@@ -3,7 +3,7 @@ import React from "react";
 const RestaurantDetail = ({ restaurant }) => {
     return(
         <div>
-            <li>
+            <ul>
                 {/* photo */}
                 <span>{restaurant.name}</span>
                 <span>{restaurant.address}</span>
@@ -11,7 +11,7 @@ const RestaurantDetail = ({ restaurant }) => {
                 <span>Overview {restaurant.overview}</span>
                 {/* more photos */}
                 <span><a href={restaurant.menu} target="_blank">Menu Link</a></span> 
-            </li>
+            </ul>
 
             {/* <ReservationForm /> */}
             {/* <ReviewsIndex /> */}
