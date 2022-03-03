@@ -20,7 +20,7 @@ const App = () => (
             </Link>
             <NavBarContainer />
         </header>
-        
+            
         <Route exact path="/" component={RestaurantIndexContainer} />
 
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
