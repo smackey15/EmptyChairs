@@ -3,6 +3,8 @@ class Restaurant < ApplicationRecord
     validates :name, uniqueness: true
 
     # ASSOCIATIONS:
+    has_one_attached :photo_main
+    
     # has_many reservations, reviews ## add after those tables are created
     # has_many saves through users?
 end
