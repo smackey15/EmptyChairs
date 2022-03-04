@@ -87,3 +87,7 @@ The 280 seat Midtown Manhattan location opened in 1997 at 481 8th Avenue (corner
 file = open("https://empty-chairs-dev.s3.amazonaws.com/ticktock.jpg") # url
 rest14.photo_main.attach(io: file, filename: 'ticktock.jpg') #photo name
 
+rest15 = Restaurant.create(name: "The Milling Room", overview: "The Milling Room features seasonal locally-sourced American cuisine, served in a sky lit dining room and lively tavern-inspired bar in the heart of the Upper West Side.", address: "446 Columbus Ave. New York, NY 10024", menu: "http://www.themillingroom.com/menu")
+file = open("https://empty-chairs-dev.s3.amazonaws.com/milling.jpg") # url
+rest15.photo_main.attach(io: file, filename: 'milling.jpg') #photo name
+
