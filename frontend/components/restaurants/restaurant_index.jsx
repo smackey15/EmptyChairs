@@ -13,8 +13,8 @@ class RestaurantIndex extends React.Component {
     render() {
         return(
             <div>
-                <h2>Restaurants</h2>
-                <ul>{
+                <h3>Restaurants</h3>
+                <ul className="index-main-rows">{
                     this.props.restaurants.map(restaurant =>
                         <RestaurantIndexItem 
                             restaurant={restaurant}

@@ -52,7 +52,7 @@ rest8 = Restaurant.create(name: "Victor's Café", overview: "Since 1963, Victor�
 
 The cuisine at Victor’s includes the most delicious, authentic dishes combined with the restaurant’s exclusive creations that represent the evolution of Cuban cuisine. Signature dishes include Victor’s famous black bean soup, shredded beef (“Ropa Vieja”), and roast suckling pig (“Lechon”).
 
-The restaurant itself is divided into three spacious dining rooms, accented with warm lighting, colorful Cuban art, tropical ceiling fans, and lofty sky-lit ceilings. Its Cuba Lounge is intimate and warm, featuring a tapas menu and a variety of Cuban cocktails such as Mojitos and Sangria.", address: "236 West 52nd Street New York, NY 10019", menu: "https://www.victorscafe.com/menus/")
+The restaurant itself is divided into three spacious dining rooms, accented with warm lighting, colorful Cuban art, tropical ceiling fans, and lofty sky-lit ceilings. Its Cuba Lounge is intimate and warm, featuring a tapas menu and a variety of Cuban cocktails such as Mojitos and Sangria.", address: "236 West 52nd St. New York, NY 10019", menu: "https://www.victorscafe.com/menus/")
 file = open("https://empty-chairs-dev.s3.amazonaws.com/victors.jpg") # url
 rest8.photo_main.attach(io: file, filename: 'victors.jpg') #photo name
 
@@ -64,7 +64,7 @@ Casa Limone offers all weekdays an Executive Lunch Menu for $35 and a Pre-Theatr
 file = open("https://empty-chairs-dev.s3.amazonaws.com/limone.jpg") # url
 rest9.photo_main.attach(io: file, filename: 'limone.jpg') #photo name
 
-rest10 = Restaurant.create(name: "Wolfgang's Steak House - Park Avenue", overview: "With 4 decades of experience, Wolfgang Zwiener didn't duplicate an exceptional steakhouse, he improved on it to make Wolfgang's Steakhouse exceptional. The porterhouse steak for one, two, four or more, is an outstanding choice. The atmosphere, expanded menu & professional service will appeal to even the most exacting diners. Wolfgang's is pleased to add this location in the heart of Midtown East.", address: "4 Park Avenue New York, NY 10016", menu: "https://www.wolfgangssteakhouse.net/menus/")
+rest10 = Restaurant.create(name: "Wolfgang's Steak House", overview: "With 4 decades of experience, Wolfgang Zwiener didn't duplicate an exceptional steakhouse, he improved on it to make Wolfgang's Steakhouse exceptional. The porterhouse steak for one, two, four or more, is an outstanding choice. The atmosphere, expanded menu & professional service will appeal to even the most exacting diners. Wolfgang's is pleased to add this location in the heart of Midtown East.", address: "4 Park Avenue New York, NY 10016", menu: "https://www.wolfgangssteakhouse.net/menus/")
 file = open("https://empty-chairs-dev.s3.amazonaws.com/wolfgangs.jpg") # url
 rest10.photo_main.attach(io: file, filename: 'wolfgangs.jpg') #photo name
 
@@ -72,13 +72,13 @@ rest11 = Restaurant.create(name: "Il Fiorista", overview: "Il Fiorista is many t
 file = open("https://empty-chairs-dev.s3.amazonaws.com/fiorista.jpg") # url
 rest11.photo_main.attach(io: file, filename: 'fiorista.jpg') #photo name
 
-rest12 = Restaurant.create(name: "Mykonos Bleu Restaurant and Rooftop", overview: "A DINING EXPERIENCE TO AWAKEN THE SENSES
+rest12 = Restaurant.create(name: "Mykonos Bleu Restaurant", overview: "A DINING EXPERIENCE TO AWAKEN THE SENSES
 Mykonos Blue is a restaurant that transports you to the Greece of your imagination. Traditional Greek food, wine and spirits being served with the integrity of pure flavor and style of the country. We further our dedication to this mission by featuring only all natural, ingredients on our menu.
 Mykonos Blue Rooftop is a cutting-edge, multidimensional space that is the crown jewel of the New York City scene. This venue is composed of numerous upscale outdoor lounges, including a open-air terraces boasting breathtaking Manhattan views. A-list DJ entertainment, exquisite ambiance and chic city dwellers reveling into the early hours. Raising altitudes and expectations, be sure to host your next outing at Mykonos Bleu, Manhattan’s premier rooftop cocktail lounge.", address: "127 W 28th St New York, NY 10001", menu: "https://www.mykonosbleu.com/menu-dinner")
 file = open("https://empty-chairs-dev.s3.amazonaws.com/mykonos.jpg") # url
 rest12.photo_main.attach(io: file, filename: 'mykonos.jpg') #photo name
 
-rest13 = Restaurant.create(name: "Dhaba", overview: "Dhaba serves authentic North Indian food and kababs from the tandoor. Offerings also include an array of curries from the 'British Curry House' setting that will satisfy a variety of curry cravings. The restaurant is open late with a limited choice menu to cater to late night cravings.", address: "108 Lexington Avenue New York, NY 10016", menu: "https://onefork.nyc/menu/dhaba")
+rest13 = Restaurant.create(name: "Dhaba", overview: "Dhaba serves authentic North Indian food and kababs from the tandoor. Offerings also include an array of curries from the 'British Curry House' setting that will satisfy a variety of curry cravings. The restaurant is open late with a limited choice menu to cater to late night cravings.", address: "108 Lexington Ave. New York, NY 10016", menu: "https://onefork.nyc/menu/dhaba")
 file = open("https://empty-chairs-dev.s3.amazonaws.com/dhaba.jpg") # url
 rest13.photo_main.attach(io: file, filename: 'dhaba.jpg') #photo name
 
