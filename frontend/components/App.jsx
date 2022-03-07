@@ -9,6 +9,7 @@ import LoginFormContainer from "./session/login_form_container"
 import SignupFormContainer from "./session/signup_form_container"
 import Modal from "./modal/modal"
 import { FaChair } from 'react-icons/fa';
+import TestComponent from "./test_component"
 
 const App = () => (
     <div>
@@ -20,10 +21,13 @@ const App = () => (
             </Link>
             <NavBarContainer />
         </header>
-        
+
+        {/* <img className="nyc-photo" src={window.nyc} /> */}
+        <Route exact path="/" component={TestComponent} />
         <Route exact path="/" component={RestaurantIndexContainer} />
 
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
+
         
         {/* <AuthRoute path="/signin" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}

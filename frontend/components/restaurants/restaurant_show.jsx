@@ -7,9 +7,7 @@ class RestaurantShow extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchRestaurant(this.props.match.params.id)
-        // debugger
     }
 
     render() {

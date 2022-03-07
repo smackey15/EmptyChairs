@@ -4,7 +4,9 @@
     width: 80px; 
     border-radius: 5px; 
     margin: 5px 5px 5px 5px;
+    border: solid 1px lightgray;
     color: whitesmoke;
+    cursor: pointer;
 }
 
 // .signup-link {
@@ -13,11 +15,13 @@
 // }
 
 .signin-button {
-   background-color: whitesmoke;
+   background-color: transparent;
    height: 35px;
    width: 80px;
    border-radius: 5px;
+   border: solid 1px lightgray;
    color: black;
+   cursor: pointer;
 }
 
 // .signin-link {

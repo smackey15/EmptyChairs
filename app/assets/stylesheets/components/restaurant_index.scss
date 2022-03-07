@@ -1,3 +1,14 @@
 .index-main-rows {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: auto;
+}
+
+.index-all {
+    margin-top: 3%;
+    margin-left: 9%;
+    margin-right: 9%;
+    border-top: 1px solid;
+    border-color: lightgrey;
+    cursor: pointer;
 }

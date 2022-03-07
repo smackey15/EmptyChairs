@@ -1,4 +1,104 @@
 .photo-main-detail {
-    width: 1078px;
-    height: 306px;
+    object-fit: cover;
+    width: 100%;
+    height: 285px;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 2%;
+}
+
+.show-body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 17%;
+    margin-right: 40%;
+    background-color: white;
+    margin-top: -50px;
+    position: relative;
+    padding-left: 1%;
+}
+
+.show-name {
+    display: block;
+    font-size: 3em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    margin-top: 5%;
+}
+
+.show-address {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray; 
+    margin-top: -3%;
+}
+
+.show-rating {
+    display: block;
+    font-size: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #da3743;
+}
+
+.chat-icon {
+    font-weight: 900;
+}
+
+.show-overview {
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+.menu-link {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray; 
+
+}
+
+.show-menu {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.mini-nav {
+    display: flex;
+    padding: 2.5% 2% 0% 0%;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.mini-nav > a {
+    margin-right: 5%;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray; 
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 2%;
+}
+
+.mini-nav > a:hover {
+    border-bottom: 1px solid #da3743;
+    color: #da3743;; 
 }

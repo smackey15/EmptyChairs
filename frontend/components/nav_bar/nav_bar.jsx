@@ -7,7 +7,7 @@ import {FaRegBell} from "react-icons/fa"
 const NavBar = ({ currentUser, logout, openModal }) => {            
     const display = currentUser ? (
         <div className="icons">
-            {/* <h2>Hello, {currentUser.first_name}!</h2> */}
+            <h2>Hello, {currentUser.first_name}!</h2>
             <HiOutlineUser />
             <AiOutlineCalendar />
             <FaRegBell />
