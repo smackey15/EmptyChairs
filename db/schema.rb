@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2022_03_07_154706) do
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "date", null: false
     t.string "time", null: false
     t.integer "party_size", null: false

@@ -5,8 +5,8 @@ import { AuthRoute } from "../util/route_util";
 import NavBarContainer from "./nav_bar/nav_bar_container"
 import RestaurantIndexContainer from "./restaurants/restaurant_index_container";
 import RestaurantShowContainer from "./restaurants/restaurant_show_container"
-import LoginFormContainer from "./session/login_form_container"
-import SignupFormContainer from "./session/signup_form_container"
+// import LoginFormContainer from "./session/login_form_container"
+// import SignupFormContainer from "./session/signup_form_container"
 import Modal from "./modal/modal"
 import { FaChair } from 'react-icons/fa';
 import TestComponent from "./test_component"
@@ -22,12 +22,11 @@ const App = () => (
             <NavBarContainer />
         </header>
 
-        {/* <img className="nyc-photo" src={window.nyc} /> */}
         <Route exact path="/" component={TestComponent} />
         <Route exact path="/" component={RestaurantIndexContainer} />
 
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
-
+        {/* <Route exact path="/reservations/:id" component={ReservationShowContainer} />         */}
         
         {/* <AuthRoute path="/signin" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} /> */}
