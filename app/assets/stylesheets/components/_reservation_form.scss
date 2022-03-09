@@ -26,6 +26,10 @@
     padding-top: 12%;
 }
 
+.reservation-input {
+    height: 30px;
+}
+
 .time-header {
     // margin-top: -20%;
 }
@@ -39,6 +43,15 @@
     border-radius: 5px;
     margin-left: 5%;
     margin-bottom: 8%;
+    font-size: 18px;
+}
+
+.party, .date, .time {
+    font-size: 14px;
+}
+
+.party-box, .date-box, .time-box {
+    width: 61%;
 }
 
 // .crazy-idea {

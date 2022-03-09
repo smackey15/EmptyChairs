@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { createReservation, fetchReservation } from "../../actions/reservation_actions";
 import ReservationForm from "./reservation_form";
+import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
@@ -14,4 +15,4 @@ const mDTP = (dispatch) => ({
     fetchReservation: (reservationId) => dispatch(fetchReservation(reservationId))
 })
 
-export default connect(mSTP, mDTP)(ReservationForm);
+export default withRouter(connect(mSTP, mDTP)(ReservationForm));

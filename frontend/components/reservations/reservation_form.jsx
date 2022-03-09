@@ -16,21 +16,21 @@ class ReservationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //     this.props.fetchReservation(this.props.match.params.id)
-    // }
-
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
     }
     
     handleSubmit(e) {
+        debugger
         e.preventDefault();
-        this.props.createReservation(this.state); 
+        this.props.createReservation(this.state)
+            .then((reservation) => { 
+                debugger
+                this.props.history.push(`/reservations/${reservation.reservation.id}`)
+            })
     }
 
     render() {
-        // if(!this.props.reservation) return null;
 
         const display = this.props.currentUser ? (
             <div>
@@ -50,29 +50,32 @@ class ReservationForm extends React.Component {
                 />
                 <br />
                 <br />
-                <label>Party Size
+                <label className="party">Party Size
                     <br />
                 <select 
                     onChange={this.handleInput("party_size")}
-                    className="">
+                    className="party-box">
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
                 </label>
                 <br />
                 <br />
-                <label>Date</label>
+                <label className="date">Date</label>
                 <br />
                 <input 
                     type="date"
                     value={this.state.date}
                     onChange={this.handleInput("date")}
-                    className=""
+                    className="date-box"
                 />
-                <label>Time</label>
+                <br />
+                <br />
+                <label className="time">Time</label>
+                <br />
                 <select 
                     onChange={this.handleInput("time")}
-                    className="time-header">
+                    className="time-box">
                     <option value="7:00 PM">7:00 PM</option>
                     <option value="7:30 PM">7:30 PM</option>
                 </select>
@@ -95,29 +98,32 @@ class ReservationForm extends React.Component {
             />
             <br />
             <br />
-                <label>Party Size
+            <label className="party">Party Size
                 <br />
                 <select 
                     onChange={this.handleInput("party_size")}
-                    className="">
+                    className="party-box">
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
                 </label>
                 <br />
                 <br />
-                <label>Date</label>
+                <label className="date">Date</label>
                 <br />
                 <input 
                     type="date"
                     value={this.state.date}
                     onChange={this.handleInput("date")}
-                    className=""
+                    className="date-box"
                 />
-                <label>Time</label>
+                <br />
+                <br />
+                <label className="time">Time</label>
+                <br />
                 <select 
                     onChange={this.handleInput("time")}
-                    className="">
+                    className="time-box">
                     <option value="7:00 PM">7:00 PM</option>
                     <option value="7:30 PM">7:30 PM</option>
                 </select>
@@ -135,9 +141,7 @@ class ReservationForm extends React.Component {
                     <div className="form-display">{display}</div>
                     <br />
                     <br />
-                    {/* <Link to={`/reservations/${reservation.id}`} className=""> */}
-                        <button className="reservation-button">Complete reservation</button>
-                    {/* </Link>               */}
+                    <button className="reservation-button">Complete reservation</button>
                 </form>
             </div>
         )

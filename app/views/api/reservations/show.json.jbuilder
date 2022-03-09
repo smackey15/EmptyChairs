@@ -1,3 +1,3 @@
 json.extract! @reservation, :id, :first_name, :last_name, :date, :time, :party_size, :restaurant_id, :user_id
-# json restname reservtation.restaurant.name
-# add guest name and restaurant name?
+json.restaurantName @reservation.restaurant.name
+json.photoUrl url_for(@reservation.restaurant.photo_main) if @reservation.restaurant.photo_main.attached?

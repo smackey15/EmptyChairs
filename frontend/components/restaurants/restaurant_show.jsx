@@ -22,8 +22,6 @@ class RestaurantShow extends React.Component {
                 <ReservationFormContainer
                     restaurant={this.props.restaurant}
                 />
-            {/* <ReservationForm
-                    restaurant={this.props.restuarant} /> */}
             {/* <ReviewsIndex /> */}
 
             </div>
