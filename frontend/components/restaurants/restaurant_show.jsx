@@ -15,7 +15,7 @@ class RestaurantShow extends React.Component {
         if(!this.props.restaurant) return null;
 
         return(
-            <div>
+            <div className="crazy-idea">
                 <RestaurantDetail
                     restaurant={this.props.restaurant}
                 />

@@ -16,6 +16,10 @@ class ReservationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentDidMount() {
+    //     this.props.fetchReservation(this.props.match.params.id)
+    // }
+
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
     }
@@ -26,6 +30,7 @@ class ReservationForm extends React.Component {
     }
 
     render() {
+        // if(!this.props.reservation) return null;
 
         const display = this.props.currentUser ? (
             <div>
@@ -46,6 +51,7 @@ class ReservationForm extends React.Component {
                 <br />
                 <br />
                 <label>Party Size
+                    <br />
                 <select 
                     onChange={this.handleInput("party_size")}
                     className="">
@@ -56,6 +62,7 @@ class ReservationForm extends React.Component {
                 <br />
                 <br />
                 <label>Date</label>
+                <br />
                 <input 
                     type="date"
                     value={this.state.date}
@@ -65,7 +72,7 @@ class ReservationForm extends React.Component {
                 <label>Time</label>
                 <select 
                     onChange={this.handleInput("time")}
-                    className="">
+                    className="time-header">
                     <option value="7:00 PM">7:00 PM</option>
                     <option value="7:30 PM">7:30 PM</option>
                 </select>
@@ -78,13 +85,18 @@ class ReservationForm extends React.Component {
                 onChange={this.handleInput("first_name")}
                 className="reservation-input"
             />
+            <br />
+            <br />
             <input 
                 type="text"
                 placeholder="Last Name"
                 onChange={this.handleInput("last_name")}
                 className="reservation-input"
             />
+            <br />
+            <br />
                 <label>Party Size
+                <br />
                 <select 
                     onChange={this.handleInput("party_size")}
                     className="">
@@ -95,6 +107,7 @@ class ReservationForm extends React.Component {
                 <br />
                 <br />
                 <label>Date</label>
+                <br />
                 <input 
                     type="date"
                     value={this.state.date}
@@ -113,14 +126,18 @@ class ReservationForm extends React.Component {
         
         return(
             <div>
-                <form onSubmit={this.handleSubmit} onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}>
-                    <h2>Make a reservation</h2>  
-                    <div>{display}</div>
+                <form 
+                    onSubmit={this.handleSubmit} 
+                    onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
+                    className="form-body"
+                    >
+                    <h2 className="form-header">Make a reservation</h2>  
+                    <div className="form-display">{display}</div>
                     <br />
                     <br />
-                    <Link to={`/reservations/${reservation.id}`} className="">
+                    {/* <Link to={`/reservations/${reservation.id}`} className=""> */}
                         <button className="reservation-button">Complete reservation</button>
-                    </Link>              
+                    {/* </Link>               */}
                 </form>
             </div>
         )
