@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {AiFillCheckCircle} from "react-icons/ai";
 import {HiOutlineUser} from "react-icons/hi"
 import {AiOutlineCalendar} from "react-icons/ai"
-import {RiBookOpenLine} from "react-icons/ri"
 import {AiFillRead} from "react-icons/ai"
 
 
@@ -20,7 +19,6 @@ class ReservationShow extends React.Component {
         if(!this.props.reservation) return null;
 
         return(
-            // <div className="page">
             <div className="confirm-all">
                 <img className="confirm-photo" src={this.props.reservation.photoUrl} alt="" />
                 <div className="confirm-details">
