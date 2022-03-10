@@ -4,10 +4,8 @@ import RestaurantShow from "./restaurant_show";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return(
     {restaurant: state.entities.restaurants[ownProps.match.params.id]})
-    // debugger
 }
 
 const mDTP = (dispatch) => ({

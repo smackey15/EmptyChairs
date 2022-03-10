@@ -3,12 +3,15 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
 
+    has_many :reservations
+    # add associations after other db tables are generated
+    # has_many :reviews, :saves
+
+
     after_validation :ensure_session_token
     
     attr_reader :password
 
-    # add associations after other db tables are generated
-    # has_many :reservations, :reviews, :saves
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
