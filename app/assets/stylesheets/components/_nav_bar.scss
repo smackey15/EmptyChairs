@@ -33,6 +33,22 @@
     zoom: 1.5;
     display: flex;
     right: 50%;
+    margin-top: 6%;
     // align-items: center;
     // justify-content: space-around;
 }
+
+.sign-out-button {
+    background-color: transparent;
+        height: 20px;
+//     width: 45%;
+    border-radius: 5px;
+    border: solid 1px lightgray;
+    color: black;
+    cursor: pointer;
+ }
+ 
+ .greeting {
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 14px;
+ }

@@ -7,11 +7,11 @@ import {FaRegBell} from "react-icons/fa"
 const NavBar = ({ currentUser, logout, openModal }) => {            
     const display = currentUser ? (
         <div className="icons">
-            <h2>Hello, {currentUser.first_name}!</h2>
+            <p className="greeting">Hello, {currentUser.first_name}!</p>
             <HiOutlineUser />
             <AiOutlineCalendar />
             <FaRegBell />
-            <button onClick={logout}>Logout</button>
+            <button onClick={logout} className="sign-out-button">Sign out</button>
             {/* above icons needs to be dropdowns with hover message */}
         </div>
     ) : (
