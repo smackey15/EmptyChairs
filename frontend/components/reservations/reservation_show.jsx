@@ -32,7 +32,7 @@ class ReservationShow extends React.Component {
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
                             <div className="helpers">
-                                <button className="browse"><AiFillRead className="browse-icon" /> Browse menu</button>
+                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu</button></Link>
                                 {/* <p>Get Directions</p> */}
                             </div>
                     {/* <h3>Who's going?</h3>
