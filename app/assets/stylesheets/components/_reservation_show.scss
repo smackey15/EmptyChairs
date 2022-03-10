@@ -1,0 +1,85 @@
+.page {
+    background-color: whitesmoke;
+}
+
+.confirm-photo {
+    object-fit: cover;
+    width: 15%;
+    height: 40%;
+    border-radius: 4px;
+    margin-left: 20%;
+    margin-top: 3%;
+}
+
+.confirm-all {
+    display: flex;
+}
+
+.confirm-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 1%
+}
+
+// .confirmed {
+//     // margin-top: -20%;
+//     // position: relative;
+// }
+
+.confirm-icon {
+    color: green;
+    zoom: 1.25;
+}
+
+.user-icon {
+    zoom: 1.25;
+    margin-bottom: -8%;
+}
+.user {
+    width: 45px;
+}
+
+.date-icon {
+    zoom: 1.25;
+}
+.date {
+    width: 120px;
+}
+
+.time {
+    margin-top: 6.5px;
+    width: 85px;
+}
+
+.three-icons {
+    display: flex;
+    margin-top: 5%;
+    font-weight: 600;
+}
+
+.helpers {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+}
+
+.browse {
+    border: solid 1px lightgrey;
+    height: 70px;
+    width: 260px;
+    background-color: transparent;
+    box-shadow: 0px 1px 10px lightgray;
+    cursor: pointer;
+    margin-left: -260px;
+}
+
+.browse:hover {
+    background-color: #f1f2f4;
+}
+
+.browse-icon {
+    zoom: 1.25;
+    color: #da3743;
+
+}

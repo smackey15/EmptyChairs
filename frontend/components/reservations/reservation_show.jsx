@@ -1,5 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {AiFillCheckCircle} from "react-icons/ai";
+import {HiOutlineUser} from "react-icons/hi"
+import {AiOutlineCalendar} from "react-icons/ai"
+import {RiBookOpenLine} from "react-icons/ri"
+import {AiFillRead} from "react-icons/ai"
+
 
 class ReservationShow extends React.Component {
     constructor(props) {
@@ -14,21 +20,26 @@ class ReservationShow extends React.Component {
         if(!this.props.reservation) return null;
 
         return(
-            <div>
-                <img className="" src={this.props.reservation.photoUrl} alt="" />
-
-                <h1>{this.props.reservation.restaurantName}</h1>
-                <h2>Reservation confirmed</h2>
-                <h2>{this.props.reservation.party_size}</h2>
-                <h2>{this.props.reservation.date} at </h2> 
-                <h2>{this.props.reservation.time}</h2> 
-                <h2>Browse menu</h2>
-                <h2>Get Directions</h2>
-                <h2>Who's going?</h2>
-                <p>{this.props.reservation.first_name}</p> 
+            // <div className="page">
+            <div className="confirm-all">
+                <img className="confirm-photo" src={this.props.reservation.photoUrl} alt="" />
+                <div className="confirm-details">
+                    <h2>{this.props.reservation.restaurantName}</h2>
+                    <p className="confirmed"><AiFillCheckCircle className="confirm-icon" /> Reservation confirmed</p>
+                        <div className="three-icons">
+                            <p className="user"><HiOutlineUser className="user-icon" />  {this.props.reservation.party_size}</p>
+                            <p className="date"><AiOutlineCalendar className="date-icon"/>  {this.props.reservation.date} at </p> 
+                            <p className="time">{this.props.reservation.time}</p> 
+                        </div>
+                            <div className="helpers">
+                                <button className="browse"><AiFillRead className="browse-icon" /> Browse menu</button>
+                                {/* <p>Get Directions</p> */}
+                            </div>
+                    {/* <h3>Who's going?</h3>
+                    <p>{this.props.reservation.first_name}</p>  */}
+                </div>
                 <br />
                 <br />
-                {/* <Link to="/">Home</Link> */}
             </div>
         )
     }

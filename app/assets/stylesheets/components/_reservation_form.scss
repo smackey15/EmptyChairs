@@ -1,10 +1,5 @@
 .form-body {
-    position: relative;
     background-color: white;
-    margin-left: 62.25%;
-    // margin-top: -23.6%;
-    margin-top: -34.7%;
-    margin-right: 17.9%;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,7 +7,6 @@
 }
 
 .form-header {
-    // border-bottom: 1px solid lightgrey;
     margin-left: 16%;
     margin-top: 3.5%;
     color: black;
@@ -28,10 +22,6 @@
 
 .reservation-input {
     height: 30px;
-}
-
-.time-header {
-    // margin-top: -20%;
 }
 
 .reservation-button {
@@ -54,7 +44,10 @@
     width: 61%;
 }
 
-// .crazy-idea {
-//     display: flex;
-//     flex-direction: column;
-// }
+.reservation-form {
+    position: absolute;
+    width: 320px;
+    top: 269.5px;
+    right: 279px;
+
+}

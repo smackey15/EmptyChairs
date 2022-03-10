@@ -8,7 +8,7 @@ import RestaurantShowContainer from "./restaurants/restaurant_show_container"
 // import SignupFormContainer from "./session/signup_form_container"
 import Modal from "./modal/modal"
 import { FaChair } from 'react-icons/fa';
-import TestComponent from "./test_component"
+import SplashPhoto from "./splash_photo.jsx"
 import ReservationShowContainer from "./reservations/reservation_show_container"
 
 const App = () => (
@@ -22,7 +22,7 @@ const App = () => (
             <NavBarContainer />
         </header>
 
-        <Route exact path="/" component={TestComponent} />
+        <Route exact path="/" component={SplashPhoto} />
         <Route exact path="/" component={RestaurantIndexContainer} />
 
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />

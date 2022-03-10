@@ -1,6 +1,6 @@
 import React from "react"
 
-const TestComponent = () => {
+const SplashPhoto = () => {
         return(
             <div >
                 <img className="nyc-photo" src={window.nyc} />
@@ -8,4 +8,4 @@ const TestComponent = () => {
         )
     }
 
-export default TestComponent
+export default SplashPhoto;
