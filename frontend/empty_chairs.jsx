@@ -1,18 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import {signup, login, logout} from "./util/session_api_util"
-// import { signup, login, logout } from "./actions/session_actions";
-// import { fetchRestaurant, fetchRestaurants } from "./util/restaurant_api_util";
-// import { fetchRestaurant, fetchRestaurants } from "./actions/restaurant_actions";
-// import { fetchReservation, createReservation } from "./util/reservation_api_util";
-import { fetchReservation, createReservation } from "./actions/reservation_actions";
 import configureStore from "./store/store"
 import Root from "./components/root"
-import { FaWindowRestore } from "react-icons/fa";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // const store = configureStore();
 
     let store;
     if (window.currentUser) {
@@ -31,15 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 
-    // test
-    // window.signup = signup;
-    // window.login = login;
-    // window.logout = logout;
-    // window.fetchRestaurant = fetchRestaurant
-    // window.fetchRestaurants = fetchRestaurants
-    window.fetchReservation = fetchReservation
-    window.createReservation = createReservation
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;      
-    // test
 });
