@@ -2,7 +2,7 @@
 
 EmptyChairs is a clone of OpenTable, the popular restaurant reservation app. Logged in users or non-users can browse and learn more details about restaurants and make reservations.  
 
-Try it live here! https://emptychairs.herokuapp.com/#/  
+Try it live [here!](https://emptychairs.herokuapp.com/#/)  
 (click `Signin` then `Demo signin` for Demo User)
 
 ## Features
