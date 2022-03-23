@@ -5,6 +5,18 @@ EmptyChairs is a clone of OpenTable, the popular restaurant reservation app. Log
 Try it live [here!](https://emptychairs.herokuapp.com/#/)  
 (click `Signin` then `Demo signin` for Demo User)
 
+## Technologies, Libraries, APIs
+
+- Ruby on Rails for the backend
+- PostgreSQL for the database
+- JavaScript/jQuery for frontend code
+- React/Redux for creating interactive UI and managing state
+- SCSS to style components rendered on the browser
+- React-icons library for icons
+- AWS Simple Storage Service (S3) for hosting photos 
+- Webpack to bundle the files
+- Heroku to host the live site
+
 ## Features
 
 With EmptyChairs users can:
@@ -71,18 +83,6 @@ SOLUTION: I used ternary logic to display the first name/last name input fields 
                 onChange={this.handleInput("last_name")}
                 className="reservation-input"
 ```
-
-## Technologies, Libraries, APIs
-
-- Ruby on Rails for the backend
-- Postgresql for the database
-- Javascript/jQuery for frontend code
-- React/Redux for creating interactive UI and managing state
-- SCSS to style components rendered on the browser
-- React-icons library for icons
-- AWS Simple Storage Service (S3) for hosting photos 
-- Webpack to bundle the files
-- Heroku to host the live site
 
 ## Future Implementations
 
