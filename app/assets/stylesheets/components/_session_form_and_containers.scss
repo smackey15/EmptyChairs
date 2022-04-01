@@ -8,9 +8,23 @@
     cursor: pointer;
 }
 
+.demo-session-button {
+    height: 40px;
+    width: 97.5%;
+    color: #da3743;
+    background-color: lightgray;
+    border: solid 1px #da3743;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 .session-input {
     height: 35px;
     width: 95%;
+    border: solid 1px gray;
+    border-radius: 5px;
+
 }
 
 .session-switch-button {

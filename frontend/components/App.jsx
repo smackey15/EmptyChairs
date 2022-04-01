@@ -28,8 +28,9 @@ const App = () => (
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
         
-        {/* <AuthRoute path="/signin" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} /> */}
+        <footer>
+            
+        </footer>
     </div>
 );
 
