@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
 
     // remove eventually? //
     handleDemo() {
-        this.setState({ username: "hungry", password: "foodie"})
+        this.setState({ username: "hungry", password: "foodie" })
     }
     // remove eventually? //
 
@@ -98,6 +98,9 @@ class SessionForm extends React.Component {
                     onChange={this.handleInput("password")}
                     className = "session-input"
                     />
+            <br />
+            <br />
+                {/* <button onClick={this.handleDemo}>Demo signin</button> */}
             </div>
         )
 
