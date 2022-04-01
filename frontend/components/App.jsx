@@ -4,10 +4,8 @@ import { AuthRoute } from "../util/route_util";
 import NavBarContainer from "./nav_bar/nav_bar_container"
 import RestaurantIndexContainer from "./restaurants/restaurant_index_container";
 import RestaurantShowContainer from "./restaurants/restaurant_show_container"
-// import LoginFormContainer from "./session/login_form_container"
-// import SignupFormContainer from "./session/signup_form_container"
 import Modal from "./modal/modal"
-import { FaChair } from 'react-icons/fa';
+import { FaChair, FaGithub, FaLinkedin } from 'react-icons/fa';
 import SplashPhoto from "./splash_photo.jsx"
 import ReservationShowContainer from "./reservations/reservation_show_container"
 
@@ -29,7 +27,11 @@ const App = () => (
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
         
         <footer>
-            
+            <div>
+                <a href="https://github.com/smackey15/EmptyChairs" target="_blank"><FaGithub/></a>
+                <a href="https://www.linkedin.com/in/sean-mackey123/" target="_blank"><FaLinkedin/></a>
+                <a href="https://smackey15.github.io/" target="_blank">Portfolio Website</a>
+            </div>
         </footer>
     </div>
 );

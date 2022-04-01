@@ -22,3 +22,13 @@
     //  left: 10%;
  }
 
+ footer div {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ footer div a {
+     text-decoration: none;
+     font-size: 25px;
+ }
