@@ -1,10 +1,15 @@
 .index-main-rows {
+    max-width: 100%;
+    height: auto;
+
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: auto;
 }
 
 .index-all {
+    // max-width: 100%;
+    // height: auto;
     margin-top: 3%;
     margin-left: 9%;
     margin-right: 9%;

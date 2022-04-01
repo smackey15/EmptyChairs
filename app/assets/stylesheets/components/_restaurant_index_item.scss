@@ -18,11 +18,13 @@
     border: 1px solid;
     border-color: lightgray;
     border-radius: 5px;
-    height: 325px;
-    width: 235px;
+    // height: 325px;
+    // width: 235px;
     // width: 90%;
     margin-bottom: 30%;
     transition: .5s;
+    max-width: 90%;
+    height: 95%;
 }
 
 .index-body:hover {
@@ -71,6 +73,7 @@
 
 .reserve-button {
     height: 35px;
+    width: 12vw;
     margin-right: 70px;
     margin-left: 5px;
     color: #da3743;
@@ -82,4 +85,8 @@
 
 .reserve-button:hover {
     background-color: #ededed;
+}
+
+.respond {
+    padding-bottom: 25%;
 }

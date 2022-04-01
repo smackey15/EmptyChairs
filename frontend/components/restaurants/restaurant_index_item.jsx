@@ -14,7 +14,7 @@ function randomstar (min, max) {
 
 const RestaurantIndexItem = ({ restaurant }) => {
     return(
-        <div>
+        <div className='respond'>
             <Link to={`/restaurants/${restaurant.id}`} className="show-link">
                 <li className='index-body'>
                     <img className='photo-main-index' src={restaurant.photoUrl} alt="" />
