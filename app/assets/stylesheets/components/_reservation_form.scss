@@ -22,6 +22,9 @@
 
 .reservation-input {
     height: 30px;
+    border: solid 1px gray;
+    border-radius: 5px;
+
 }
 
 .reservation-button {
@@ -39,10 +42,13 @@
 
 .party, .date, .time {
     font-size: 14px;
+
 }
 
 .party-box, .date-box, .time-box {
     width: 61%;
+    border: solid 1px gray;
+    border-radius: 5px;
 }
 
 .reservation-form {
