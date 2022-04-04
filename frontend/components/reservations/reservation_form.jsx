@@ -16,8 +16,16 @@ class ReservationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
+    componentDidMount() {
+        this.props.removeErrors();
+    }
 
     componentDidUpdate(prevProps) {
+
         if (this.props.currentUser !== prevProps.currentUser) {
             this.setState({
                 first_name: this.props.currentUser ? this.props.currentUser.first_name : "",
@@ -33,14 +41,22 @@ class ReservationForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        if (!this.state.first_name || !this.state.last_name) {
-            alert("field must be filled out")
-        } else {
         this.props.createReservation(this.state)
             .then((reservation) => { 
                 this.props.history.push(`/reservations/${reservation.reservation.id}`)
             })
-        }
+    }
+
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
     }
 
     render() {
@@ -167,6 +183,7 @@ class ReservationForm extends React.Component {
                     <br />
                     <br />
                     <button className="reservation-button">Complete reservation</button>
+                    {this.renderErrors()}
                 </form>
             </div>
         )
