@@ -30,7 +30,7 @@ const App = () => (
             <div>
                 <a href="https://github.com/smackey15/EmptyChairs" target="_blank"><FaGithub/></a>
                 <a href="https://www.linkedin.com/in/sean-mackey123/" target="_blank"><FaLinkedin/></a>
-                <a href="https://smackey15.github.io/" target="_blank">Portfolio Website</a>
+                <button><a href="https://smackey15.github.io/" target="_blank">Portfolio Website</a></button>
             </div>
         </footer>
     </div>
