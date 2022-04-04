@@ -3,12 +3,16 @@ import { createReservation, fetchReservation } from "../../actions/reservation_a
 import ReservationForm from "./reservation_form";
 import { withRouter } from "react-router-dom";
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => {
+    // debugger
+    return {
     currentUser: state.entities.users[state.session.id],
+    // currentUser: state.session.id,
     restaurantId: ownProps.restaurant.id,
     // reservation: state.entities.reservations[ownProps.match.params.id]
     // reservationId: ownProps.reservation.id
-})
+    }
+}
 
 const mDTP = (dispatch) => ({
     createReservation: (reservation) => dispatch(createReservation(reservation)),

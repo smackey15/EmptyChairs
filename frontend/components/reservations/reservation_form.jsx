@@ -16,25 +16,41 @@ class ReservationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
+    componentDidUpdate(prevProps) {
+        if (this.props.currentUser !== prevProps.currentUser) {
+            this.setState({
+                first_name: this.props.currentUser ? this.props.currentUser.first_name : "",
+                last_name: this.props.currentUser ? this.props.currentUser.last_name : "",
+                user_id: this.props.currentUser ? this.props.currentUser.id : ""
+                }, () => console.log("NEWSTATE" + JSON.stringify(this.state)))
+        }
+    }
+
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
     }
     
     handleSubmit(e) {
         e.preventDefault();
+        if (!this.state.first_name || !this.state.last_name) {
+            alert("field must be filled out")
+        } else {
         this.props.createReservation(this.state)
             .then((reservation) => { 
                 this.props.history.push(`/reservations/${reservation.reservation.id}`)
             })
+        }
     }
 
     render() {
-
-        const display = this.props.currentUser ? (
+        const display = (
             <div>
                 <input 
                     type="text"
-                    defaultValue={this.props.currentUser.first_name}
+                    // defaultValue={this.props.currentUser.first_name}
+                    placeholder="First Name"
+                    value={this.state.first_name}
                     onChange={this.handleInput("first_name")}
                     className="reservation-input"
                 />
@@ -42,33 +58,36 @@ class ReservationForm extends React.Component {
                 <br />
                 <input 
                     type="text"
-                    defaultValue={this.props.currentUser.last_name}
+                    // defaultValue={this.props.currentUser.last_name}
+                    placeholder="Last Name"
+                    value={this.state.last_name}
                     onChange={this.handleInput("last_name")}
                     className="reservation-input"
                 />
                 <br />
                 <br />
             </div>
-        ) : (
-        <div>
-            <input 
-                type="text"
-                placeholder="First Name"
-                onChange={this.handleInput("first_name")}
-                className="reservation-input"
-            />
-            <br />
-            <br />
-            <input 
-                type="text"
-                placeholder="Last Name"
-                onChange={this.handleInput("last_name")}
-                className="reservation-input"
-            />
-            <br />
-            <br />
-            </div>
-        )
+        ) 
+        // : (
+        // <div>
+        //     <input 
+        //         type="text"
+        //         placeholder="First Name"
+        //         onChange={this.handleInput("first_name")}
+        //         className="reservation-input"
+        //     />
+        //     <br />
+        //     <br />
+        //     <input 
+        //         type="text"
+        //         placeholder="Last Name"
+        //         onChange={this.handleInput("last_name")}
+        //         className="reservation-input"
+        //     />
+        //     <br />
+        //     <br />
+        //     </div>
+        // )
         
         return(
             <div className="reservation-form"> 
