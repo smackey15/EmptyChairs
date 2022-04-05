@@ -16,6 +16,21 @@ class ReservationForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
+    componentDidUpdate(prevProps) {
+
+        if (this.props.currentUser !== prevProps.currentUser) {
+            this.setState({
+                first_name: this.props.currentUser ? this.props.currentUser.first_name : "",
+                last_name: this.props.currentUser ? this.props.currentUser.last_name : "",
+                user_id: this.props.currentUser ? this.props.currentUser.id : ""
+                }, () => console.log("NEWSTATE" + JSON.stringify(this.state)))
+        }
+    }
+
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
     }
@@ -28,13 +43,26 @@ class ReservationForm extends React.Component {
             })
     }
 
-    render() {
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
 
-        const display = this.props.currentUser ? (
+    render() {
+        const display = (
             <div>
                 <input 
                     type="text"
-                    defaultValue={this.props.currentUser.first_name}
+                    // defaultValue={this.props.currentUser.first_name}
+                    placeholder="First Name"
+                    value={this.state.first_name}
                     onChange={this.handleInput("first_name")}
                     className="reservation-input"
                 />
@@ -42,33 +70,36 @@ class ReservationForm extends React.Component {
                 <br />
                 <input 
                     type="text"
-                    defaultValue={this.props.currentUser.last_name}
+                    // defaultValue={this.props.currentUser.last_name}
+                    placeholder="Last Name"
+                    value={this.state.last_name}
                     onChange={this.handleInput("last_name")}
                     className="reservation-input"
                 />
                 <br />
                 <br />
             </div>
-        ) : (
-        <div>
-            <input 
-                type="text"
-                placeholder="First Name"
-                onChange={this.handleInput("first_name")}
-                className="reservation-input"
-            />
-            <br />
-            <br />
-            <input 
-                type="text"
-                placeholder="Last Name"
-                onChange={this.handleInput("last_name")}
-                className="reservation-input"
-            />
-            <br />
-            <br />
-            </div>
-        )
+        ) 
+        // : (
+        // <div>
+        //     <input 
+        //         type="text"
+        //         placeholder="First Name"
+        //         onChange={this.handleInput("first_name")}
+        //         className="reservation-input"
+        //     />
+        //     <br />
+        //     <br />
+        //     <input 
+        //         type="text"
+        //         placeholder="Last Name"
+        //         onChange={this.handleInput("last_name")}
+        //         className="reservation-input"
+        //     />
+        //     <br />
+        //     <br />
+        //     </div>
+        // )
         
         return(
             <div className="reservation-form"> 
@@ -148,6 +179,7 @@ class ReservationForm extends React.Component {
                     <br />
                     <br />
                     <button className="reservation-button">Complete reservation</button>
+                    {this.renderErrors()}
                 </form>
             </div>
         )
