@@ -1,6 +1,6 @@
 import * as APIUtil from "../util/reservation_api_util"
 export const RECEIVE_RESERVATION = "RECEIVE_RESERVATION"
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS"
+export const RECEIVE_RESERVATION_ERRORS = "RECEIVE_ERRORS"
 export const REMOVE_ERRORS = "REMOVE_ERRORS"
 
 const receiveReservation = (reservation) => ({
@@ -9,7 +9,7 @@ const receiveReservation = (reservation) => ({
 })
 
 const receiveErrors = (errors) => ({
-    type: RECEIVE_ERRORS,
+    type: RECEIVE_RESERVATION_ERRORS,
     errors
 })
 
