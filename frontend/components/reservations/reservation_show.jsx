@@ -29,8 +29,13 @@ class ReservationShow extends React.Component {
                             <p className="date"><AiOutlineCalendar className="date-icon"/>  {this.props.reservation.date} at </p> 
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
+                        <button onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
+                            .then(() => {this.props.history.push(`/`)})}
+                        >Cancel</button>
                             <div className="helpers">
-                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu</button></Link>
+                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
+                                <br />
+                                Restaurant's Profile</button></Link>
                                 {/* <p>Get Directions</p> */}
                             </div>
                     {/* <h3>Who's going?</h3>

@@ -25,7 +25,7 @@ import {FaRegBell} from "react-icons/fa"
 //         </div>
 //     )
 
-    const NavBar = ({ currentUser, logout, openModal, removeErrors }) => {            
+    const NavBar = ({ currentUser, logout, openModal }) => {            
         const display = currentUser ? (
             <div className="icons">
                 <p className="greeting">Hello, {currentUser.first_name}!</p>
