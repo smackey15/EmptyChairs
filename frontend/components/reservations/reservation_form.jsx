@@ -20,10 +20,6 @@ class ReservationForm extends React.Component {
         this.props.removeErrors();
     }
 
-    componentDidMount() {
-        this.props.removeErrors();
-    }
-
     componentDidUpdate(prevProps) {
 
         if (this.props.currentUser !== prevProps.currentUser) {

@@ -17,11 +17,6 @@ class SessionForm extends React.Component {
         this.props.removeErrors();
     }
 
-    componentDidMount() {
-        this.props.removeErrors();
-    }
-
-
     // remove eventually? //
     handleDemo() {
         this.setState({ username: "hungry", password: "foodie" })
