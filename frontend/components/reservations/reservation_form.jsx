@@ -60,7 +60,6 @@ class ReservationForm extends React.Component {
             <div>
                 <input 
                     type="text"
-                    // defaultValue={this.props.currentUser.first_name}
                     placeholder="First Name"
                     value={this.state.first_name}
                     onChange={this.handleInput("first_name")}
@@ -70,7 +69,6 @@ class ReservationForm extends React.Component {
                 <br />
                 <input 
                     type="text"
-                    // defaultValue={this.props.currentUser.last_name}
                     placeholder="Last Name"
                     value={this.state.last_name}
                     onChange={this.handleInput("last_name")}
@@ -80,26 +78,13 @@ class ReservationForm extends React.Component {
                 <br />
             </div>
         ) 
-        // : (
-        // <div>
-        //     <input 
-        //         type="text"
-        //         placeholder="First Name"
-        //         onChange={this.handleInput("first_name")}
-        //         className="reservation-input"
-        //     />
-        //     <br />
-        //     <br />
-        //     <input 
-        //         type="text"
-        //         placeholder="Last Name"
-        //         onChange={this.handleInput("last_name")}
-        //         className="reservation-input"
-        //     />
-        //     <br />
-        //     <br />
-        //     </div>
-        // )
+        
+        const disablePastDate = () => {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, "0");
+            const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+            const yyyy = today.getFullYear();
+            return yyyy + "-" + mm + "-" + dd;}
         
         return(
             <div className="reservation-form"> 
@@ -140,6 +125,7 @@ class ReservationForm extends React.Component {
                             type="date"
                             value={this.state.date}
                             onChange={this.handleInput("date")}
+                            min={disablePastDate()}
                             className="date-box"
                         />
                         <br />

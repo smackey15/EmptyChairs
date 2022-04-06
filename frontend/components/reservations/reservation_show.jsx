@@ -29,6 +29,7 @@ class ReservationShow extends React.Component {
                             <p className="date"><AiOutlineCalendar className="date-icon"/>  {this.props.reservation.date} at </p> 
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
+                        <button onClick={() => this.props.openModal("editreservation")}>Modify</button>
                         <button onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
                             .then(() => {this.props.history.push(`/`)})}
                         >Cancel</button>
