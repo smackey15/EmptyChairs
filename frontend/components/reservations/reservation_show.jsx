@@ -29,10 +29,10 @@ class ReservationShow extends React.Component {
                             <p className="date"><AiOutlineCalendar className="date-icon"/>  {this.props.reservation.date} at </p> 
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
-                        <button onClick={() => this.props.openModal("editreservation")}>Modify</button>
-                        <button onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
+                        {/* <button onClick={() => this.props.openModal("editreservation")}>Modify</button> */}
+                        <p className="cancel" onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
                             .then(() => {this.props.history.push(`/`)})}
-                        >Cancel</button>
+                        >Cancel</p>
                             <div className="helpers">
                                 <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
                                 <br />
