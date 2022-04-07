@@ -18,7 +18,7 @@ function Modal({modal, closeModal}) {
             component = <SignupFormContainer />
             break;
         case "editreservation":
-            component = <SignupFormContainer /> // need a new EditReservationFormContainer //
+            // component = <CreateReservationFormContainer /> // need a new EditReservationFormContainer //
             break;
         default:
             return null;

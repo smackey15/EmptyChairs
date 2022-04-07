@@ -8,9 +8,10 @@ import Modal from "./modal/modal"
 import { FaChair, FaGithub, FaLinkedin } from 'react-icons/fa';
 import SplashPhoto from "./splash_photo.jsx"
 import ReservationShowContainer from "./reservations/reservation_show_container"
+import ResCancel from "./reservations/reservation_cancellation_confirmation"
 
 const App = () => (
-    <div>
+    <div className="page-container">
         <Modal />
         <header className="header">
             <Link to="/" className="nav-bar-link">
@@ -25,6 +26,7 @@ const App = () => (
 
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
+        <Route exact path="/rescancel" component={ResCancel} />        
         
         <footer>
             <div>

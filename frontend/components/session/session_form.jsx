@@ -17,11 +17,9 @@ class SessionForm extends React.Component {
         this.props.removeErrors();
     }
 
-    // remove eventually? //
     handleDemo() {
         this.setState({ username: "hungry", password: "foodie" })
     }
-    // remove eventually? //
 
     handleInput(type) {
         return (e) => this.setState({ [type]: e.target.value})
@@ -29,7 +27,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state).then(this.props.closeModal); //added modal
+        this.props.processForm(this.state).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -64,7 +62,6 @@ class SessionForm extends React.Component {
             <br />
             <br />
                 <button className="demo-session-button" onClick={this.handleDemo}>Demo Sign In</button>
-                {/* remove above eventually? */}
             </div>
         ) : (
             <div>

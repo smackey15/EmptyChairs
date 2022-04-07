@@ -21,24 +21,22 @@
      color: #da3743;
     //  left: 10%;
  }
-
+ 
  footer div {
      display: flex;
      align-items: center;
      justify-content: space-around;
-    //  background-color: lightgray;
      background-color: #2d333f;
-     width: 100%;
-     height: 75px;
+    //  width: 100%vw;
+     width: 100vw;
+    // //  height: 75px;
+     height: 15vh;
      margin-top: 20%;
-    //  margin: auto;
- 
  }
 
  footer div a {
      text-decoration: none;
      font-size: 23px;
-    //  color:#da3743;
      color: white;
  }
 
@@ -51,3 +49,8 @@
      border: 1px solid white;
      background-color: transparent;
  }
+
+//  .page-container {
+//      min-height: 100vh;
+//      position: absolute;
+//  }
