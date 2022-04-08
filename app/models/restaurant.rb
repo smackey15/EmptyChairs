@@ -4,7 +4,8 @@ class Restaurant < ApplicationRecord
 
     # ASSOCIATIONS:
     has_one_attached :photo_main
-    has_many :reservations, :reviews
+    has_many :reservations
+    has_many :reviews
 
     # has_many_attached :photos_body
 

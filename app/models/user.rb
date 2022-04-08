@@ -3,7 +3,8 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :password, length: { minimum: 6, allow_nil: true }
 
-    has_many :reservations, :reviews
+    has_many :reservations
+    has_many :reviews
     # add associations after other db tables are generated
     # has_many :saves
 
