@@ -19,6 +19,16 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def update
+        @review = Review.find(params[:id])
+        @review = Review.new(review_params)
+        if @review.save
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422
+        end
+    end
+
     def destroy
         @review = Review.find(params[:id])
         if @review.delete
@@ -27,7 +37,6 @@ class Api::ReviewsController < ApplicationController
             render json: ["Error, please try again"]
         end
     end
-
 
     private
     def review_params
