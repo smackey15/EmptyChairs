@@ -19,6 +19,16 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        @review = Review.find(params[:id])
+        if @review.delete
+            render :show
+        else
+            render json: ["Error, please try again"]
+        end
+    end
+
+
     private
     def review_params
         params.require(:review).permit(:nickname, :body, :overall, :food, :service, :ambience, :restaurant_id, :user_id)
