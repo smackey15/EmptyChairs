@@ -1,6 +1,6 @@
 class Api::ReservationsController < ApplicationController
 
-    # The show page is the confirmation page seen by the user?
+    # The show page is the confirmation page seen by the user
     def show
         @reservation = Reservation.find(params[:id])
         render :show
