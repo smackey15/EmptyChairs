@@ -4,6 +4,11 @@ class Api::ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         render :show
     end
+
+    def index
+        @reviews = Review.all 
+        render :index
+    end
     
     def create
         @review = Review.new(review_params)
