@@ -51,6 +51,11 @@
     border: solid 1px gray;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.party-box:hover, .date-box:hover, .time-box:hover {
+    border-bottom: solid 2px #da3743;
 }
 
 .reservation-form {
