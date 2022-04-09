@@ -6,7 +6,7 @@ class Api::ReservationsController < ApplicationController
         render :show
     end
 
-    # The index page is a list of all reservations, which React will group according to user_id === currentUser.id
+    # The index page is a list of all reservations, which React will group on front end according to user_id === currentUser.id
     def index
         @reservations = Reservation.all
         render :index
