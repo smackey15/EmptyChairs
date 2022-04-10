@@ -33,9 +33,9 @@ import {FaRegBell} from "react-icons/fa"
                     <div className="dropdown">
                             <p className="dropbtn"><HiOutlineUser /></p>
                             <ul className="dropdown-content">
-                                <Link to={`/userprofile`}><li>My Profile</li></Link>
-                                <li>My Saved Restaurants</li>
-                                <li onClick={logout}>Sign out</li>
+                                <Link to={`/userprofile`} className="link-to"><li className="gray">My Profile</li></Link>
+                                <li className="gray">My Saved Restaurants</li>
+                                <li className="sign-out-nav" onClick={logout}>Sign out</li>
                             </ul>
                     </div>
             </div>
