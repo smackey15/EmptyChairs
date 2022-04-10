@@ -17,11 +17,6 @@ const UserShow = ({ currentUser }) => {
                 <Link to={`/userprofile`}><h3>Reservations</h3></Link>
                 <h3>Saved Restaurants</h3>
             </div>
-
-            <div>
-            <h1>RESERVATION INDEX GOES HERE</h1>
-            {/* <ReservationIndex /> */}
-            </div>
         </div>
     )
     }

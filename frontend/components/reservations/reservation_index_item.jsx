@@ -21,7 +21,7 @@ const ReservationIndexItem = ({ reservation }) => {
                     <span className='item-name'>{reservation.restaurantName}</span>
                     <span className='item-address'>{reservation.party_size}</span>
                     <span className='item-address'>{reservation.date}</span>
-                    <button className='reserve-button'>Leave a review</button>
+                    <Link to={`/reviews/form`}><p className='reserve-button'>Leave a review</p></Link>
                 </li>
             {/* </Link> */}
         </div>
