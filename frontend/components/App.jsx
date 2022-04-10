@@ -9,6 +9,8 @@ import { FaChair, FaGithub, FaLinkedin } from 'react-icons/fa';
 import SplashPhoto from "./splash_photo.jsx"
 import ReservationShowContainer from "./reservations/reservation_show_container"
 import ResCancel from "./reservations/reservation_cancellation_confirmation"
+import UserShowContainer from "./users/user_show_container";
+import ReservationIndexContainer from "./reservations/reservation_index_container"
 
 const App = () => (
     <div className="page-container">
@@ -27,6 +29,8 @@ const App = () => (
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
         <Route exact path="/rescancel" component={ResCancel} />        
+        <Route exact path="/userprofile" component={UserShowContainer} />
+        <Route exact path="/userprofile" component={ReservationIndexContainer} />
         
         <footer>
             <div>
