@@ -10,7 +10,6 @@ import SplashPhoto from "./splash_photo.jsx"
 import ReservationShowContainer from "./reservations/reservation_show_container"
 import ResCancel from "./reservations/reservation_cancellation_confirmation"
 import UserShowContainer from "./users/user_show_container";
-// import ReservationIndexContainer from "./reservations/reservation_index_container"
 import CreateReviewFormContainer from "./reviews/create_review_form_container"
 
 const App = () => (
@@ -26,13 +25,14 @@ const App = () => (
 
         <Route exact path="/" component={SplashPhoto} />
         <Route exact path="/" component={RestaurantIndexContainer} />
+
         <ProtectedRoute exact path="/restaurants/:id/reviews/form" component={CreateReviewFormContainer} />
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
+
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
-        <Route exact path="/rescancel" component={ResCancel} />        
+        <Route exact path="/rescancel" component={ResCancel} />
+                
         <ProtectedRoute exact path="/userprofile" component={UserShowContainer} />
-        {/* <Route exact path="/userprofile" component={ReservationIndexContainer} /> */}
-        {/* <ProtectedRoute exact path="/reviews/form" component={CreateReviewFormContainer} /> */}
         
         <footer>
             <div>
