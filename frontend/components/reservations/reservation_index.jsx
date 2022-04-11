@@ -1,6 +1,7 @@
 import React from "react";
 import { LOGOUT_CURRENT_USER } from "../../actions/session_actions";
 import ReservationIndexItem from "./reservation_index_item";
+import CreateReviewFormContainer from "../reviews/create_review_form_container"
 
 class ReservationIndex extends React.Component {
     constructor(props) {
