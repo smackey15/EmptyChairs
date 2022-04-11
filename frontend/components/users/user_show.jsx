@@ -5,10 +5,10 @@ import ReservationIndexContainer from "../reservations/reservation_index_contain
 
 const UserShow = ({ currentUser }) => {
 
-    const history = useHistory();
-    if (!currentUser) {
-        {history.push(`/`)}
-    } else {
+    // const history = useHistory();
+    // if (!currentUser) {
+    //     {history.push(`/`)}
+    // } else {
 
     return (
         <div>
@@ -24,7 +24,6 @@ const UserShow = ({ currentUser }) => {
 
         </div>
     )
-    }
 }
 
 export default UserShow;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarContainer from "./nav_bar/nav_bar_container"
 import RestaurantIndexContainer from "./restaurants/restaurant_index_container";
 import RestaurantShowContainer from "./restaurants/restaurant_show_container"
@@ -30,9 +30,9 @@ const App = () => (
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
         <Route exact path="/rescancel" component={ResCancel} />        
-        <Route exact path="/userprofile" component={UserShowContainer} />
+        <ProtectedRoute exact path="/userprofile" component={UserShowContainer} />
         {/* <Route exact path="/userprofile" component={ReservationIndexContainer} /> */}
-        <Route exact path="/reviews/form" component={CreateReviewFormContainer} />
+        <ProtectedRoute exact path="/reviews/form" component={CreateReviewFormContainer} />
         
         <footer>
             <div>
