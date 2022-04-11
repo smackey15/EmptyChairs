@@ -13,7 +13,6 @@ class ReservationIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props.reservations)
         return(
             <div className="index-all">
                 <h3>Reservations</h3>

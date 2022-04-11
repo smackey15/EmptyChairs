@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CreateReviewFormContainer from "../reviews/create_review_form_container";
 
 // function randomnum (min, max) {
 //     min = Math.ceil(min)
@@ -20,7 +19,7 @@ const ReservationIndexItem = ({ reservation }) => {
                     <span className='item-name'>{reservation.restaurantName}</span>
                     <span className='item-address'>{reservation.party_size}</span>
                     <span className='item-address'>{reservation.date}</span>
-                    <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`} reservation={reservation}><p className='reserve-button'>Leave a review</p></Link>
+                    <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`}><p className='reserve-button'>Leave a review</p></Link>
                 </li>
 
         </div>
