@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
             food: "",
             service: "",
             ambience: "",
-            restaurant_id: "4",
+            restaurant_id: "4",  // must fix this with dynamic code
             user_id: this.props.currentUser.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,11 +27,10 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createReview(this.state)
-            // .then((reservation) => { 
-            //     this.props.history.push(`/reservations/${reservation.reservation.id}`)
-            // })
+            .then((review) => { 
+                this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
+            })
     }
-
 
     renderErrors() {
         return(
@@ -53,7 +52,7 @@ class ReviewForm extends React.Component {
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
                     className=""
                 >
-                <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant Name</h2>
+                <h2>{this.props.currentUser.first_name}, how was your experience at **Restaurant Name**</h2>
 
                     <label className="">Overall
                         <select 
