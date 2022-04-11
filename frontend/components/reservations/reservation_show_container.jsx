@@ -3,10 +3,13 @@ import { fetchReservation, deleteReservation } from "../../actions/reservation_a
 import ReservationShow from "./reservation_show";
 import { withRouter } from "react-router-dom";
 import { openModal } from "../../actions/modal_actions";
+import { logout } from "../../actions/session_actions";
 
 const mSTP = (state, ownProps) => {
     return(
-    {reservation: state.entities.reservations[ownProps.match.params.id]})
+    {reservation: state.entities.reservations[ownProps.match.params.id]}
+    // {logsout: logout}
+    )
 }
 
 const mDTP = (dispatch) => ({

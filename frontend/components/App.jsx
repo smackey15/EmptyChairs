@@ -26,13 +26,13 @@ const App = () => (
 
         <Route exact path="/" component={SplashPhoto} />
         <Route exact path="/" component={RestaurantIndexContainer} />
-
+        <ProtectedRoute exact path="/restaurants/:id/reviews/form" component={CreateReviewFormContainer} />
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
         <Route exact path="/reservations/:id" component={ReservationShowContainer} />        
         <Route exact path="/rescancel" component={ResCancel} />        
         <ProtectedRoute exact path="/userprofile" component={UserShowContainer} />
         {/* <Route exact path="/userprofile" component={ReservationIndexContainer} /> */}
-        <ProtectedRoute exact path="/reviews/form" component={CreateReviewFormContainer} />
+        {/* <ProtectedRoute exact path="/reviews/form" component={CreateReviewFormContainer} /> */}
         
         <footer>
             <div>

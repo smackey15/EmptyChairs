@@ -1,14 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
 import ReservationIndexContainer from "../reservations/reservation_index_container"
 
 const UserShow = ({ currentUser }) => {
-
-    // const history = useHistory();
-    // if (!currentUser) {
-    //     {history.push(`/`)}
-    // } else {
 
     return (
         <div>

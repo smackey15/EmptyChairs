@@ -12,23 +12,8 @@ class ReservationIndex extends React.Component {
         this.props.fetchReservations();
     }
 
-    // render() {
-    //     return(
-    //         <div className="index-all">
-    //             <h3>Reservations</h3>
-    //             <ul className="index-main-rows">{
-    //                 this.props.reservations.map(reservation =>
-    //                     <ReservationIndexItem 
-    //                         reservation={reservation}
-    //                         key={reservation.id}
-    //                     />
-    //                     )
-    //                 }</ul>
-    //         </div>
-    //     )
-    // }
-
     render() {
+        console.log(this.props.reservations)
         return(
             <div className="index-all">
                 <h3>Reservations</h3>

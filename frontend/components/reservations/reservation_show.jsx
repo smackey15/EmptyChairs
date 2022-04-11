@@ -17,6 +17,9 @@ class ReservationShow extends React.Component {
 
     render() {
         if(!this.props.reservation) return null;
+        // if(this.props.logsout) {
+        //     this.props.history.push(`/`)
+        // }
 
         return(
             <div className="confirm-all">

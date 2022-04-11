@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
             food: "",
             service: "",
             ambience: "",
-            restaurant_id: "4",  // must fix this with dynamic code
+            restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
