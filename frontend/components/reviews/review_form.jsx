@@ -53,6 +53,8 @@ class ReviewForm extends React.Component {
                     className=""
                 >
                 <h2>{this.props.currentUser.first_name}, how was your experience at **Restaurant Name**</h2>
+                <br />
+                <h3>Rate your dining experience</h3>
 
                     <label className="">Overall
                         <select 
@@ -122,7 +124,7 @@ class ReviewForm extends React.Component {
                     </div>
                     <br />
                     <br />
-                    <h2>What is your review's nickname?</h2>
+                    <h2>What is your reviews nickname?</h2>
                     <h3>Your nickname will be published on EmptyChairs alongside any reviews you create and publish. For privacy reasons, don’t use your full name or email address.</h3>
                     <input
                         placeholder="Nickname"

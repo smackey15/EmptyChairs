@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-import ReservationIndex from "../reservations/reservation_index"
+import ReservationIndexContainer from "../reservations/reservation_index_container"
 
 const UserShow = ({ currentUser }) => {
 
@@ -17,6 +17,11 @@ const UserShow = ({ currentUser }) => {
                 <Link to={`/userprofile`}><h3>Reservations</h3></Link>
                 <h3>Saved Restaurants</h3>
             </div>
+
+            <ReservationIndexContainer
+                currentUser={currentUser}
+            />
+
         </div>
     )
     }
