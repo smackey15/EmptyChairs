@@ -15,15 +15,13 @@ import { Link } from 'react-router-dom';
 const ReservationIndexItem = ({ reservation }) => {
     return(
         <div className='respond'>
-            {/* <Link to={`/restaurants/${restaurant.id}`} className="show-link"> */}
                 <li className='index-body'>
                     <img className='photo-main-index' src={reservation.photoUrl} alt="" />
                     <span className='item-name'>{reservation.restaurantName}</span>
                     <span className='item-address'>{reservation.party_size}</span>
                     <span className='item-address'>{reservation.date}</span>
-                    <Link to={`/reviews/form`}><p className='reserve-button'>Leave a review</p></Link>
+                    <Link to={`/reviews/form`} reservation={reservation}><p className='reserve-button'>Leave a review</p></Link>
                 </li>
-            {/* </Link> */}
         </div>
     )
 }

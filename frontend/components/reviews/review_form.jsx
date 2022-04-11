@@ -1,0 +1,143 @@
+import React from "react";
+
+class ReviewForm extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            nickname: "",
+            body: "",
+            overall: "",
+            food: "",
+            service: "",
+            ambience: "",
+            restaurant_id: "4",
+            user_id: this.props.currentUser.id
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
+
+    handleInput(type) {
+        return (e) => this.setState({ [type]: e.target.value})
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createReview(this.state)
+            // .then((reservation) => { 
+            //     this.props.history.push(`/reservations/${reservation.reservation.id}`)
+            // })
+    }
+
+
+    renderErrors() {
+        return(
+            <ul>
+                {this.props.errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
+    render() {
+        return(
+            <div>
+                <form
+                    onSubmit={this.handleSubmit} 
+                    onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
+                    className=""
+                >
+                <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant Name</h2>
+
+                    <label className="">Overall
+                        <select 
+                            onChange={this.handleInput("overall")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Food
+                        <select 
+                            onChange={this.handleInput("food")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Service
+                        <select 
+                            onChange={this.handleInput("service")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Ambience
+                        <select 
+                            onChange={this.handleInput("ambience")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </label>
+                    <br />
+                    <br />
+                    <h2>Write a review</h2>
+                    <h3>Help diners decide where to eat. Remember to keep it short, simple and specific.</h3>
+                    <div className="textarea__wrapper">
+                    <textarea
+                        onChange={this.handleInput("body")}
+                        countLimit={2000}
+                        placeholder="Your review must be at least 50 characters"/>
+                        <br />
+                        <span className="textarea__count">0/2000</span>
+                    </div>
+                    <br />
+                    <br />
+                    <h2>What is your review's nickname?</h2>
+                    <h3>Your nickname will be published on EmptyChairs alongside any reviews you create and publish. For privacy reasons, don’t use your full name or email address.</h3>
+                    <input
+                        placeholder="Nickname"
+                        value={this.state.nickname}
+                        onChange={this.handleInput("nickname")}
+                    />
+                    <br />
+                    <br />
+                    <button className="review-button">Submit</button>
+                    {this.renderErrors()}
+                </form>
+            </div>
+        )
+    }
+}
+
+export default ReviewForm;
