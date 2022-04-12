@@ -19,7 +19,7 @@ const RestaurantDetail = ({ restaurant }) => {
                 <div className="mini-nav">
                     <HashLink to="#overview">Overview</HashLink>
                     <HashLink to="#menu">Menu</HashLink>
-                    {/* <HashLink to="">Reviews</HashLink> */}
+                    <HashLink to="#reviews">Reviews</HashLink>
                 </div>
                 <span className="show-name">{restaurant.name}</span>
                 <span className="show-address">{restaurant.address}</span>

@@ -13,7 +13,7 @@ class ReviewIndex extends React.Component {
     render() {
         return(
             <div className="index-all">
-                <h3>What People Are Saying:</h3>
+                <h3 id="reviews">What People Are Saying:</h3>
                 <ul className="index-main-rows">{
                     this.props.reviews.map(review =>
                         <ReviewIndexItem 

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, currentUser }) => {
     return(
+
         <div className=''>
                 <li className=''>
                     <span>Badge</span>
@@ -15,6 +16,7 @@ const ReviewIndexItem = ({ review }) => {
                     <span className=''>{review.body}</span>
                     <Link to={`/restaurants/${review.restaurant_id}/reviews/form`}><span className=''>Edit Review</span></Link>
                     <span className=''>Delete Review</span>
+                    {/* <span>{currentUser.first_name}</span> */}
                     {/* <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`}><p className='reserve-button'>Leave a review</p></Link> */}
                 </li>
 
