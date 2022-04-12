@@ -5,6 +5,7 @@ class ReviewForm extends React.Component {
         super(props)
         this.state = {
             nickname: "",
+            // nickname: this.props.formType === "edit" ? this.props.review.nickname : "", 
             body: "",
             overall: "",
             food: "",
@@ -52,7 +53,7 @@ class ReviewForm extends React.Component {
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
                     className=""
                 >
-                <h2>{this.props.currentUser.first_name}, how was your experience at **Restaurant Name**</h2>
+                <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
                 <br />
                 <h3>Rate your dining experience</h3>
 

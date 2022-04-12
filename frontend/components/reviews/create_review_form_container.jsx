@@ -7,6 +7,7 @@ const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         restaurantId: ownProps.match.params.id,
+        restaurant: state.entities.restaurants[ownProps.match.params.id],
         errors: state.errors.reviews 
     }
 }
