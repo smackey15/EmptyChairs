@@ -5,7 +5,6 @@ import CreateReviewForm from "./create_review_form";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
-    console.log(state.entities, "state.entities")
     // const restaurantV = Object.keys(state.entities.restaurants).length > 0 ? state.entities.restaurants[ownProps.match.params.id] : ""
     // console.log("restaurantV")
     return {

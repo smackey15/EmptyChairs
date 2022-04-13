@@ -64,9 +64,6 @@ class CreateReviewForm extends React.Component {
                     className=""
                 >
                 <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
-                {/* { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""} */}
-                {/* {console.log(this.props.restaurant)} */}
-                {/* <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant</h2> */}
                 <br />
                 <h3>Rate your dining experience</h3>
 

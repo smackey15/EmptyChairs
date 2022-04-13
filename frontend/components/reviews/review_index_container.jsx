@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import ReviewIndex from "./review_index";
-import ReviewIndexItem from "./review_index_item"
 import { fetchReviews, deleteReview } from "../../actions/review_actions";
 import { withRouter } from "react-router-dom";
 

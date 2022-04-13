@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 const ReviewIndexItem = ({ review, currentUser, deleteReview }) => {
+    let history = useHistory();
     let display = currentUser?.id === review.user_id ?
         <div>
             <Link to={`/restaurants/${review.restaurant_id}/reviews/${review.id}/form`}><span className=''>Edit Review</span></Link>
             <span 
                 className=''
-                onClick={() => deleteReview(review.id)}
+                onClick={() => deleteReview(review.id)
+                .then(() => {history.push(`/revdelete`)})}
             >
             Delete Review</span>
         </div>

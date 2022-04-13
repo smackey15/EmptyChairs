@@ -27,7 +27,7 @@ class ReservationForm extends React.Component {
                 first_name: this.props.currentUser ? this.props.currentUser.first_name : "",
                 last_name: this.props.currentUser ? this.props.currentUser.last_name : "",
                 user_id: this.props.currentUser ? this.props.currentUser.id : ""
-                }, () => console.log("NEWSTATE" + JSON.stringify(this.state)))
+                })
         }
     }
 
