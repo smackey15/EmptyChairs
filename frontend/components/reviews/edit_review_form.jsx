@@ -1,22 +1,29 @@
 import React from "react";
 
-class ReviewForm extends React.Component {
+class EditReviewForm extends React.Component {
     constructor(props) {
         super(props)
+        this.props.review ?
         this.state = {
-            nickname: "",
-            // nickname: this.props.formType === "edit" ? this.props.review.nickname : "", 
-            body: "",
-            overall: "",
-            food: "",
-            service: "",
-            ambience: "",
+            nickname: this.props.review.nickname,
+            body: this.props.review.body,
+            overall: this.props.review.overall,
+            food: this.props.review.food,
+            service: this.props.review.service,
+            ambience: this.props.review.ambience,
             restaurant_id: this.props.restaurantId,  
-            user_id: this.props.currentUser.id
-        }
+            user_id: this.props.currentUser.id,
+            id: this.props.reviewId
+        } :
+        this.state = ""
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        if (!this.props.restaurant) this.props.fetchRestaurants();
+        if (!this.props.review) this.props.fetchReviews();
+    }
+    
     componentWillUnmount() {
         this.props.removeErrors();
     }
@@ -27,7 +34,7 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createReview(this.state)
+        this.props.updateReview(this.state)
             .then((review) => { 
                 this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
             })
@@ -46,6 +53,8 @@ class ReviewForm extends React.Component {
     }
 
     render() {
+        {console.log(this.props.restaurant, "this.props.restaurant")}
+
         return(
             <div>
                 <form
@@ -53,15 +62,20 @@ class ReviewForm extends React.Component {
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
                     className=""
                 >
-                <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
+                {/* <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> */}
+                { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""}
+
+                {/* {console.log(this.props.restaurant)} */}
+                {/* <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant</h2> */}
                 <br />
                 <h3>Rate your dining experience</h3>
 
                     <label className="">Overall
                         <select 
                             onChange={this.handleInput("overall")}
-                            className="">
-                            <option defaultValue="--">--</option>
+                            className=""
+                            value={this.state.overall}
+                            >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -74,8 +88,9 @@ class ReviewForm extends React.Component {
                     <label className="">Food
                         <select 
                             onChange={this.handleInput("food")}
-                            className="">
-                            <option defaultValue="--">--</option>
+                            className=""
+                            value={this.state.food}
+                            >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -88,8 +103,9 @@ class ReviewForm extends React.Component {
                     <label className="">Service
                         <select 
                             onChange={this.handleInput("service")}
-                            className="">
-                            <option defaultValue="--">--</option>
+                            className=""
+                            value={this.state.service}
+                            >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -102,8 +118,9 @@ class ReviewForm extends React.Component {
                     <label className="">Ambience
                         <select 
                             onChange={this.handleInput("ambience")}
-                            className="">
-                            <option defaultValue="--">--</option>
+                            className=""
+                            value={this.state.ambience}
+                            >
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -118,8 +135,10 @@ class ReviewForm extends React.Component {
                     <div className="textarea__wrapper">
                     <textarea
                         onChange={this.handleInput("body")}
-                        countLimit={2000}
-                        placeholder="Your review must be at least 50 characters"/>
+                        // countLimit={2000}
+                        placeholder="Your review must be at least 50 characters"
+                        value={this.state.body}
+                        />
                         <br />
                         <span className="textarea__count">0/2000</span>
                     </div>
@@ -142,4 +161,4 @@ class ReviewForm extends React.Component {
     }
 }
 
-export default ReviewForm;
+export default EditReviewForm;

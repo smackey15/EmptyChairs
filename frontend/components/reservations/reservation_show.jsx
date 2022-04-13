@@ -17,9 +17,6 @@ class ReservationShow extends React.Component {
 
     render() {
         if(!this.props.reservation) return null;
-        // if(this.props.logsout) {
-        //     this.props.history.push(`/`)
-        // }
 
         return(
             <div className="confirm-all">
@@ -33,10 +30,12 @@ class ReservationShow extends React.Component {
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
                         {/* <button onClick={() => this.props.openModal("editreservation")}>Modify</button> */}
-                        <p className="cancel" onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
-                            .then(() => {this.props.history.push(`/rescancel`)})
-                        }
-                        >Cancel</p>
+                        <p 
+                            className="cancel" 
+                            onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
+                            .then(() => {this.props.history.push(`/rescancel`)})}
+                        >
+                            Cancel</p>
                             <div className="helpers">
                                 <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
                                 <br />

@@ -17,6 +17,8 @@ class ReviewIndex extends React.Component {
                 <ul className="index-main-rows">{
                     this.props.reviews.map(review =>
                         <ReviewIndexItem 
+                            deleteReview={this.props.deleteReview}
+                            currentUser={this.props.currentUser}
                             review={review}
                             key={review.id}
                         />
@@ -25,8 +27,6 @@ class ReviewIndex extends React.Component {
             </div>
         )
     }
-
-
 }
 
 export default ReviewIndex;

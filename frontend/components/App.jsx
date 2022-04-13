@@ -11,6 +11,7 @@ import ReservationShowContainer from "./reservations/reservation_show_container"
 import ResCancel from "./reservations/reservation_cancellation_confirmation"
 import UserShowContainer from "./users/user_show_container";
 import CreateReviewFormContainer from "./reviews/create_review_form_container"
+import EditReviewFormContainer from "./reviews/edit_review_form_container"
 
 const App = () => (
     <div className="page-container">
@@ -26,6 +27,8 @@ const App = () => (
         <Route exact path="/" component={SplashPhoto} />
         <Route exact path="/" component={RestaurantIndexContainer} />
 
+        <ProtectedRoute exact path="/restaurants/:restId/reviews/:revId/form" component={EditReviewFormContainer}/> 
+        {/* give rest id and review id different names and use those names in the edit form container to define props */}
         <ProtectedRoute exact path="/restaurants/:id/reviews/form" component={CreateReviewFormContainer} />
         <Route exact path="/restaurants/:id" component={RestaurantShowContainer} />
 

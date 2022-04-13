@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ReviewIndex from "./review_index";
 import ReviewIndexItem from "./review_index_item"
-import { fetchReviews } from "../../actions/review_actions";
+import { fetchReviews, deleteReview } from "../../actions/review_actions";
 import { withRouter } from "react-router-dom";
 
 
@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => ({
-    fetchReviews: () => dispatch(fetchReviews())
+    fetchReviews: () => dispatch(fetchReviews()),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
 })
 
 export default withRouter(connect(mSTP, mDTP)(ReviewIndex));
