@@ -3,25 +3,40 @@ import React from "react";
 class EditReviewForm extends React.Component {
     constructor(props) {
         super(props)
-        this.props.review ?
+        // this.props.review ?
         this.state = {
-            nickname: this.props.review.nickname,
-            body: this.props.review.body,
-            overall: this.props.review.overall,
-            food: this.props.review.food,
-            service: this.props.review.service,
-            ambience: this.props.review.ambience,
+            nickname: this.props.review?.nickname,
+            body: this.props.review?.body,
+            overall: this.props.review?.overall,
+            food: this.props.review?.food,
+            service: this.props.review?.service,
+            ambience: this.props.review?.ambience,
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id,
             id: this.props.reviewId
-        } :
-        this.state = ""
+        } 
+        // :
+        // this.state = ""
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
         if (!this.props.restaurant) this.props.fetchRestaurants();
         if (!this.props.review) this.props.fetchReviews();
+    }
+
+    componentDidUpdate(prevProps) {
+
+        if (this.props.review !== prevProps.review) {
+            this.setState({
+                nickname: this.props.review.nickname,
+                body: this.props.review.body,
+                overall: this.props.review.overall,
+                food: this.props.review.food,
+                service: this.props.review.service,
+                ambience: this.props.review.ambience,
+            })
+        }
     }
     
     componentWillUnmount() {
@@ -55,6 +70,9 @@ class EditReviewForm extends React.Component {
     render() {
         {console.log(this.props.restaurant, "this.props.restaurant")}
 
+        if (!this.props.restaurant) return null;
+        if (!this.props.review) return null;
+
         return(
             <div>
                 <form
@@ -62,8 +80,8 @@ class EditReviewForm extends React.Component {
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
                     className=""
                 >
-                {/* <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> */}
-                { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""}
+                <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
+                {/* { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""} */}
 
                 {/* {console.log(this.props.restaurant)} */}
                 {/* <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant</h2> */}

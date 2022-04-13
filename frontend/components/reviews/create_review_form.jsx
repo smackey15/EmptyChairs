@@ -54,6 +54,8 @@ class CreateReviewForm extends React.Component {
     render() {
         {console.log(this.props.restaurant, "this.props.restaurant")}
 
+        if (!this.props.restaurant) return null;
+
         return(
             <div>
                 <form
@@ -61,8 +63,8 @@ class CreateReviewForm extends React.Component {
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
                     className=""
                 >
-                {/* <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> */}
-                { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""}
+                <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
+                {/* { this.props.restaurant ? <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2> : ""} */}
                 {/* {console.log(this.props.restaurant)} */}
                 {/* <h2>{this.props.currentUser.first_name}, how was your experience at Restaurant</h2> */}
                 <br />
