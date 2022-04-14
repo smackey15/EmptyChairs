@@ -1,6 +1,7 @@
 import React from "react";
 import RestaurantDetail from "./restaurant_detail";
 import ReservationFormContainer from "../reservations/create_reservation_form_container"
+import ReviewIndexContainer from "../reviews/review_index_container"
 
 class RestaurantShow extends React.Component {
     constructor(props) {
@@ -22,8 +23,9 @@ class RestaurantShow extends React.Component {
                 <ReservationFormContainer
                     restaurant={this.props.restaurant}
                 />
-            {/* <ReviewsIndex /> */}
-
+                <ReviewIndexContainer 
+                    restaurant={this.props.restaurant}
+                />
             </div>
         )
     }

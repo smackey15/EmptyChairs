@@ -5,6 +5,13 @@ export const fetchReservation= (reservationId) => (
     })
 )
 
+export const fetchReservations = () => (
+    $.ajax({
+        method: "GET",
+        url: `/api/reservations`
+    })
+)
+
 export const createReservation= (reservation) => (
     $.ajax({
         method: "POST",

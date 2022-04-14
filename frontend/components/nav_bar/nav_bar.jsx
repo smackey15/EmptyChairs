@@ -1,5 +1,5 @@
 import React from "react";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {HiOutlineUser} from "react-icons/hi"
 import {AiOutlineCalendar} from "react-icons/ai"
 import {FaRegBell} from "react-icons/fa"
@@ -33,7 +33,9 @@ import {FaRegBell} from "react-icons/fa"
                     <div className="dropdown">
                             <p className="dropbtn"><HiOutlineUser /></p>
                             <ul className="dropdown-content">
-                                <li onClick={logout}>Sign out</li>
+                                <Link to={`/userprofile`} className="link-to"><li className="gray">My Profile</li></Link>
+                                <li className="gray">My Saved Restaurants</li>
+                                <li className="sign-out-nav" onClick={logout}>Sign out</li>
                             </ul>
                     </div>
             </div>

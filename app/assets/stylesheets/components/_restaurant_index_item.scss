@@ -30,6 +30,9 @@
 .index-body:hover {
     margin-top: -10px;
     box-shadow: 0px 1px 10px lightgray;
+    .photo-main-index {
+        transform: scaleX(1.05) scaleY(1.05)
+    }
 }
 
 .item-name, .item-rating {

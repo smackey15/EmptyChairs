@@ -1,9 +1,16 @@
 class Api::ReservationsController < ApplicationController
 
-    # The show page is the confirmation page seen by the user?
+    # The show page is the confirmation page seen by the user
     def show
         @reservation = Reservation.find(params[:id])
         render :show
+    end
+
+    # The index page is a list of all reservations belonging to the current user
+    def index
+        @reservations = current_user.reservations
+        # @reservations = Reservation.all
+        render :index
     end
 
     def create
@@ -18,7 +25,6 @@ class Api::ReservationsController < ApplicationController
     def destroy
         @reservation = Reservation.find(params[:id])
         if @reservation.delete
-            # render json: ["Reservation Cancelled"]
             render :show
         else
             render json: ["Error, please try again"]
