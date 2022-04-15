@@ -14,7 +14,6 @@ class CreateFavorite extends React.Component {
     componentDidMount() {
         this.props.fetchFavorites()
     }
-
     handleSubmit(e) {
         e.preventDefault();
         this.props.createFavorite({
