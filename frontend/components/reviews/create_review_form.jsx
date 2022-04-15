@@ -52,7 +52,6 @@ class CreateReviewForm extends React.Component {
     }
 
     render() {
-        {console.log(this.props.restaurant, "this.props.restaurant")}
 
         if (!this.props.restaurant) return null;
 
