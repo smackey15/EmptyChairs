@@ -5,8 +5,7 @@ class User < ApplicationRecord
 
     has_many :reservations
     has_many :reviews
-    # add associations after other db tables are generated
-    # has_many :saves
+    has_many :favorites
 
 
     after_validation :ensure_session_token
