@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FavoriteIndexItem = ({ favorite, currentUser }) => {
+const FavoriteIndexItem = ({ favorite, deleteFavorite, restaurant }) => {
     return(
 
         <div className='respond'>
-            <h1>Favorite Index Goes Here</h1>
-                {/* <li className='index-body'>
-                    <img className='photo-main-index' src={reservation.photoUrl} alt="" />
-                    <span className='item-name'>{reservation.restaurantName}</span>
-                    <span className='item-address'>{reservation.party_size}</span>
-                    <span className='item-address'>{reservation.date}</span> */}
-                    {/* <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`}><p className='reserve-button'>Leave a review</p></Link> */}
-                {/* </li> */}
+                <li className='index-body'>
+                    <img className='photo-main-index' src={restaurant.photoUrl} alt="" />
+                    <span className='item-name'>{restaurant.name}</span>
+                    <span onClick={() => deleteFavorite(favorite.id)}>Remove from saved restaurants</span>
+                    <span className='item-address'>rating</span>
+                    <span className='item-address'>cuisine/neighborhood</span>
+                </li>
         </div>
     )
 }
