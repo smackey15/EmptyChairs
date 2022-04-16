@@ -13,6 +13,7 @@ import UserShowContainer from "./users/user_show_container";
 import CreateReviewFormContainer from "./reviews/create_review_form_container"
 import EditReviewFormContainer from "./reviews/edit_review_form_container"
 import RevDelete from "./reviews/review_deletion_cancellation";
+import FavoriteIndexContainer from "./favorites/favorite_index_container"
 
 const App = () => (
     <div className="page-container">
@@ -38,7 +39,7 @@ const App = () => (
         <Route exact path="/rescancel" component={ResCancel} />
                 
         <ProtectedRoute exact path="/userprofile" component={UserShowContainer} />
-        <ProtectedRoute exact path="/myfavorites" component={UserShowContainer} />
+        <ProtectedRoute exact path="/myfavorites" component={FavoriteIndexContainer} />
         
         <footer>
             <div>
