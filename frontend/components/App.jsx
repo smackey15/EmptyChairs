@@ -38,6 +38,7 @@ const App = () => (
         <Route exact path="/rescancel" component={ResCancel} />
                 
         <ProtectedRoute exact path="/userprofile" component={UserShowContainer} />
+        <ProtectedRoute exact path="/myfavorites" component={UserShowContainer} />
         
         <footer>
             <div>

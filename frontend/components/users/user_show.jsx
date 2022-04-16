@@ -9,7 +9,7 @@ const UserShow = ({ currentUser }) => {
             <div>
                 <h1>{currentUser.first_name} {currentUser.last_name}</h1>
                 <Link to={`/userprofile`}><h3>Reservations</h3></Link>
-                <h3>Saved Restaurants</h3>
+                <Link to={`/myfavorites`}><h3>Saved Restaurants</h3></Link>
             </div>
 
             <ReservationIndexContainer
