@@ -43,21 +43,24 @@ class CreateFavorite extends React.Component {
         this.props.deleteFavorite(this.props.favorite.id)
     }
 
+
     render() {
+        // if (!this.props.favorite) return null
+
         return (
             <div>
-                <button
+                {/* <button
                     onClick={this.props.currentUser ? this.handleSubmitCreate : () => this.props.openModal("login")}>
                     <p className="before-save">Save this restaurant</p>
                     <p className="after-save">Restaurant saved!</p>
-                </button>
+                </button> */}
 
-                {/* <button
+                <button
                     // onClick={(this.state.user_id === this.props.currentUser.id && this.state.restaurant_id === this.props.restaurantId) ? this.handleSubmitDelete : this.handleSubmitCreate}>
                     onClick={this.handleSubmitDelete}>
                     <p className="before-save">Save this restaurant</p>
                     <p className="after-save">Restaurant saved!</p>
-                </button> */}
+                </button>
 
             </div>
         )
