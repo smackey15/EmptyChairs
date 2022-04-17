@@ -1,0 +1,23 @@
+.user-nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+    border-color: #ededed;
+}
+
+.user-name {
+    margin-left: 17.5%;
+}
+
+.res-link {
+    text-decoration: none;
+    margin-left: 17.5%;
+} 
+
+.res-link h3 {
+    font-size: 14px;
+}
+
+.res-link h3:hover {
+    color: #da3743;
+}
