@@ -12,7 +12,7 @@ const mSTP = (state, props, ownProps) => {
         restaurant: props.restaurant,
         favorites: state.entities.favorites,
         // favorite: state.entities.favorites[favorite.restaurant_id === props.restaurant.id],
-        favorite: Object.values(state.entities.favorites).filter(favorite => favorite.restaurant_id === props.restaurant.id),
+        favorite: Object.values(state.entities.favorites).filter(current => current.restaurant_id === props.restaurant.id)[0],
         // favorite: state.entities.favorites[8]
     }
 }
