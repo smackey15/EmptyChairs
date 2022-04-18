@@ -20,14 +20,15 @@ class CreateFavorite extends React.Component {
         if (this.props.currentUser) {
         this.props.fetchFavorites()
         }
+        this.props.fetchRestaurant(this.props.restaurantId)
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.currentUser && !prevProps.currentUser) {
-        this.props.fetchFavorites()
-        }
+        // if (this.props.currentUser && !prevProps.currentUser) {
+        // this.props.fetchFavorites()
+        // }
 
-        // if (this.props.favorite !== this.prevProps.favorite)
+        // if (this.props.favorite.length !== this.prevProps.favorite.length)
         // this.props.fetchFavorites()
 
         // if (!this.props.currentUser && prevProps.currentUser) {

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { createFavorite, deleteFavorite, fetchFavorites, fetchFavorite } from "../../actions/favorite_actions"
+import { fetchRestaurant } from "../../actions/restaurant_actions"
 import CreateFavorite from "./create_favorite";
 import { withRouter } from "react-router-dom";
 import { openModal } from "../../actions/modal_actions";
@@ -22,6 +23,7 @@ const mDTP = (dispatch) => ({
     deleteFavorite: (favoriteId) => dispatch(deleteFavorite(favoriteId)),
     fetchFavorites: () => dispatch(fetchFavorites()),
     fetchFavorite: (favoriteId) => dispatch(fetchFavorite(favoriteId)),
+    fetchRestaurant: (restaurantId) => dispatch(fetchRestaurant(restaurantId)),
     openModal: (modal) => dispatch(openModal(modal))
 })
 
