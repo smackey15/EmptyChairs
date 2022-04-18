@@ -5,7 +5,7 @@ import {AiOutlineCalendar} from "react-icons/ai"
 
 const ReservationIndexItem = ({ reservation }) => {
     return(
-        <div className='res-respond'>
+        <div>
                 <li className='res-index-body'>
                     <img className='res-photo-main-index' src={reservation.photoUrl} alt="" />
                     <div className='res-content'>

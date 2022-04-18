@@ -54,9 +54,6 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: darkslategray; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .res-size, .res-date {
@@ -69,9 +66,6 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: darkslategray; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     padding-top: 3%;
     font-size: 15px;
 }
@@ -91,7 +85,3 @@
 .review-link:hover {
     color: #da3743;
 }
-
-// .res-respond {
-//     padding-bottom: 25%;
-// }
