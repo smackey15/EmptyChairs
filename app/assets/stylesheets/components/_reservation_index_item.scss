@@ -23,6 +23,10 @@
     height: 158px;
 }
 
+.res-index-body:hover {
+    box-shadow: 0px 1px 10px lightgray;
+}
+
 .res-content {
     display: flex;
     flex-direction: column;
@@ -31,10 +35,11 @@
 
 .res-details {
     display: flex;
+    margin-left: 5px;
 }
 
-.res-index-body:hover {
-    box-shadow: 0px 1px 10px lightgray;
+.res-icon {
+    zoom: 1.5;
 }
 
 .res-item-name {
@@ -54,7 +59,7 @@
     white-space: nowrap;
 }
 
-.item-address {
+.res-size, .res-date {
     display: block;
     font-size: .8em;
     margin-inline-start: 0px;
@@ -67,6 +72,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-top: 3%;
+    font-size: 15px;
 }
 
 .review-link {

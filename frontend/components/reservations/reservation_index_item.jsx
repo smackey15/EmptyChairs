@@ -11,8 +11,10 @@ const ReservationIndexItem = ({ reservation }) => {
                     <div className='res-content'>
                         <span className='res-item-name'>{reservation.restaurantName}</span>
                         <div className='res-details'>
-                            <span className='item-address'>{reservation.party_size}</span>
-                            <span className='item-address'>{reservation.date}</span>
+                            <HiOutlineUser className='res-icon' />
+                            <span className='res-size'>{reservation.party_size}</span>
+                            <AiOutlineCalendar className='res-icon' />
+                            <span className='res-date'>{reservation.date}</span>
                         </div>
                         <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`} className='review-link'><p className='review-link'>Leave a review</p></Link>
                     </div>
