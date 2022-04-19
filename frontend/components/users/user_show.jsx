@@ -4,8 +4,8 @@ import ReservationIndexContainer from "../reservations/reservation_index_contain
 
 const UserShow = ({ currentUser }) => {
 
-    return (
-        <div >
+    return 
+        <div>
             <div className="user-nav">
                 <h1 className="user-name">{currentUser.first_name} {currentUser.last_name}</h1>
                 <Link to={`/userprofile`} className="res-link"><h3>Reservations</h3></Link>
