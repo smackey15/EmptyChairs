@@ -11,6 +11,7 @@ const FavoriteIndexItem = ({ favorite, deleteFavorite, restaurant }) => {
                     <span onClick={() => deleteFavorite(favorite.id)}>Remove from saved restaurants</span>
                     <span className='item-address'>rating</span>
                     <span className='item-address'>cuisine/neighborhood</span>
+                    <Link to={`/restaurants/${restaurant.id}`}><button>Reserve now</button></Link>
                 </li>
         </div>
     )

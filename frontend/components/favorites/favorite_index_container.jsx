@@ -7,14 +7,10 @@ import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
     return {
-        // line 10 filters favorites by current user on the back end only returns those
         favorites: Object.values(state.entities.favorites),
         currentUser: state.entities.users[state.session.id],
-        restaurants: Object.values(state.entities.restaurants)
-        
-        // lines 12-13 return all reservations from the backend and then filter by current user on the front end
-        // reservations: Object.values(state.entities.reservations).filter(res =>
-        //     res.user_id === ownProps.currentUser.id)
+        // restaurants: Object.values(state.entities.restaurants)
+        restaurants: state.entities.restaurants
     }    
 }
 
