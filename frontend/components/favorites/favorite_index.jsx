@@ -15,10 +15,10 @@ class FavoriteIndex extends React.Component {
     render() {
         return(
             <div>
-                <div>
-                    <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
-                    <Link to={`/userprofile`}><h3>Reservations</h3></Link>
-                    <Link to={`/myfavorites`}><h3>Saved Restaurants</h3></Link>
+                <div className="user-nav">
+                    <h1 className="user-name">{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+                    <Link to={`/userprofile`} className="sav-link"><h3>Reservations</h3></Link>
+                    <Link to={`/myfavorites`} className="res-link"><h3>Saved Restaurants</h3></Link>
                 </div>
 
                 <div className="index-all">
