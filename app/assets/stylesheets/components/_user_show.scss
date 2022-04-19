@@ -9,15 +9,20 @@
     margin-left: 17.5%;
 }
 
-.res-link {
+.res-link, .sav-link {
     text-decoration: none;
     margin-left: 17.5%;
+} 
+
+.sav-link h3 {
+    font-size: 14px;
+    font-weight: 250;
 } 
 
 .res-link h3 {
     font-size: 14px;
 }
 
-.res-link h3:hover {
+.res-link h3:hover, .sav-link h3:hover {
     color: #da3743;
 }
