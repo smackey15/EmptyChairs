@@ -1,6 +1,6 @@
 .sav-index-main-rows {
     max-width: 60%;
-    margin-left: 35%;
+    margin-left: 28.5%;
     display: flex;
     flex-direction: column;
 }
@@ -12,5 +12,35 @@
 }
 
 .sav-index-all h3 {
-    margin-left: 35%;
+    margin-left: 28.5%;
 }
+
+.sav-nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid;
+    border-color: #ededed;
+}
+
+.sav-user-name {
+    margin-left: 14%;
+}
+
+.sav-res-link, .sav-sav-link {
+    text-decoration: none;
+    margin-left: 14%;
+} 
+
+.sav-res-link h3 {
+    font-size: 14px;
+    font-weight: 250;
+} 
+
+.sav-sav-link h3 {
+    font-size: 14px;
+}
+
+.sav-res-link h3:hover, .sav-sav-link h3:hover {
+    color: #da3743;
+}
+
