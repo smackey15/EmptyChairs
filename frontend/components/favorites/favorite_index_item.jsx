@@ -6,12 +6,12 @@ const FavoriteIndexItem = ({ favorite, deleteFavorite, restaurant }) => {
 
         <div className='respond'>
                 <li className='index-body'>
-                    <img className='photo-main-index' src={restaurant.photoUrl} alt="" />
-                    <span className='item-name'>{restaurant.name}</span>
+                    {restaurant ? <img className='photo-main-index' src={restaurant.photoUrl} alt="" /> : ""}
+                    {restaurant ? <span className='item-name'>{restaurant.name}</span> : ""}
                     <span onClick={() => deleteFavorite(favorite.id)}>Remove from saved restaurants</span>
                     <span className='item-address'>rating</span>
                     <span className='item-address'>cuisine/neighborhood</span>
-                    <Link to={`/restaurants/${restaurant.id}`}><button>Reserve now</button></Link>
+                    {restaurant ? <Link to={`/restaurants/${restaurant.id}`}><button>Reserve now</button></Link> : ""}
                 </li>
         </div>
     )
