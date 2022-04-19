@@ -4,7 +4,7 @@ class CreateFavorite extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // isFavorite: this.props.favorite.length === 0 ? false : true,
+            isFavorite: false,
             user_id: this.props.favorite ? this.props.favorite.user_id : "",
             restaurant_id: this.props.favorite ? this.props.favorite.restaurant_id : "",
             // test_case: this.props.favorite && this.props.favorite.id ? this.props.favorite : ""
@@ -17,23 +17,42 @@ class CreateFavorite extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         if (this.props.currentUser) {
         this.props.fetchFavorites()
-        }
+        .then(() => {
+            if (this.props.favorite?.restaurant_id === this.props.restaurant.id) {
+                this.setState({ isFavorite: true})
+            } else {
+                this.setState({ isFavorite: false})
+            }
+            console.log(this.state)
+            console.log(this.props)
+        })
+        } 
+        // debugger
         this.props.fetchRestaurant(this.props.restaurantId)
+        // console.log(this.props)
     }
 
     componentDidUpdate(prevProps) {
-        // if (this.props.currentUser && !prevProps.currentUser) {
-        // this.props.fetchFavorites()
-        // }
+        if (this.props.currentUser && !prevProps.currentUser) {
+        this.props.fetchFavorites()
+        .then(() => {
+            if (this.props.favorite?.restaurant_id === this.props.restaurant.id) {
+                this.setState({ isFavorite: true})
+            } else {
+                this.setState({ isFavorite: false})
+            }
+        })
+        }
 
-        // if (this.props.favorite.length !== this.prevProps.favorite.length)
+        // if (this.props.favorite?.length === 1 && this.prevProps.favorite?.length === 0)
         // this.props.fetchFavorites()
 
-        // if (!this.props.currentUser && prevProps.currentUser) {
-        //     this.props.favorites = {}
-        // }
+        if (!this.props.currentUser && prevProps.currentUser) {
+            this.setState({ isFavorite: false})
+        }
     }
 
     handleSubmitCreate(e) {
@@ -42,24 +61,23 @@ class CreateFavorite extends React.Component {
             user_id: this.props.currentUser.id,
             restaurant_id: this.props.restaurantId      
         })
-        // this.setState({isFavorite: true})
+        this.setState({isFavorite: true})
     }
 
     handleSubmitDelete(e) {
         e.preventDefault();
         this.props.deleteFavorite(this.props.favorite.id)
-        // this.setState({isFavorite: false})
+        this.setState({isFavorite: false})
 
     }
-
 
     render() {
         // if (!this.props.favorite) return null
 
         return (
             <div>
-                {(this.state.user_id !== this.props.currentUser?.id) && (this.state.restaurant_id !== this.props.restaurantId) ?
-                /* {!this.state.test_case ?  */
+                {/* {(this.state.user_id !== this.props.currentUser?.id) && (this.state.restaurant_id !== this.props.restaurantId) ? */}
+                {!this.state.isFavorite ?
                 <button
                     onClick={this.props.currentUser ? this.handleSubmitCreate : () => this.props.openModal("login")}>{console.log("add", this.state.test_case)}
                     <p className="before-save">Save this restaurant</p>
