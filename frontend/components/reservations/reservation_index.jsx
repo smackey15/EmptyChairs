@@ -12,9 +12,9 @@ class ReservationIndex extends React.Component {
 
     render() {
         return(
-            <div className="index-all">
+            <div className="res-index-all">
                 <h3>Reservations</h3>
-                <ul className="index-main-rows">{
+                <ul className="res-index-main-rows">{
                     this.props.reservations.map(reservation =>
                         <ReservationIndexItem 
                             reservation={reservation}

@@ -1,0 +1,87 @@
+
+.res-photo-main-index {
+    object-fit: cover;
+    width: 20%;
+    height: 80%;
+    border-radius: 20px;
+    padding-left: 3%;
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.res-index-body {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border: 1px solid;
+    border-color: lightgray;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    transition: .5s;
+    max-width: 77%;
+    height: 158px;
+}
+
+.res-index-body:hover {
+    box-shadow: 0px 1px 10px lightgray;
+}
+
+.res-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+}
+
+.res-details {
+    display: flex;
+    margin-left: 5px;
+}
+
+.res-icon {
+    zoom: 1.5;
+}
+
+.res-item-name {
+    display: block;
+    font-size: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray; 
+}
+
+.res-size, .res-date {
+    display: block;
+    font-size: .8em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray; 
+    padding-top: 3%;
+    font-size: 15px;
+}
+
+.review-link {
+    text-decoration: none;
+    height: 35px;
+    width: 12vw;
+    margin-right: 70px;
+    margin-left: 5px;
+    color: gray;
+    padding-top: 4%;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.review-link:hover {
+    color: #da3743;
+}
