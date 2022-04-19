@@ -21,9 +21,9 @@ class FavoriteIndex extends React.Component {
                     <Link to={`/myfavorites`} className="res-link"><h3>Saved Restaurants</h3></Link>
                 </div>
 
-                <div className="index-all">
+                <div className="sav-index-all">
                     <h3>Saved Restaurants</h3>
-                    <ul className="index-main-rows">{
+                    <ul className="sav-index-main-rows">{
                         this.props.favorites.map(favorite =>
                             <FavoriteIndexItem 
                                 restaurant={this.props.restaurants[favorite.restaurant_id]}
