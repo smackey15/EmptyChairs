@@ -6,10 +6,10 @@ const UserShow = ({ currentUser }) => {
 
     return (
         <div>
-            <div>
-                <h1>{currentUser.first_name} {currentUser.last_name}</h1>
-                <Link to={`/userprofile`}><h3>Reservations</h3></Link>
-                <Link to={`/myfavorites`}><h3>Saved Restaurants</h3></Link>
+            <div className="user-nav">
+                <h1 className="user-name">{currentUser.first_name} {currentUser.last_name}</h1>
+                <Link to={`/userprofile`} className="res-link"><h3>Reservations</h3></Link>
+                <h3>Saved Restaurants</h3>
             </div>
 
             <ReservationIndexContainer
