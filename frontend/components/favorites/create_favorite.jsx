@@ -58,7 +58,7 @@ class CreateFavorite extends React.Component {
 
         return (
             <div>
-                {(this.state.user_id !== this.props.currentUser.id) && (this.state.restaurant_id !== this.props.restaurantId) ?
+                {(this.state.user_id !== this.props.currentUser?.id) && (this.state.restaurant_id !== this.props.restaurantId) ?
                 /* {!this.state.test_case ?  */
                 <button
                     onClick={this.props.currentUser ? this.handleSubmitCreate : () => this.props.openModal("login")}>{console.log("add", this.state.test_case)}
