@@ -1,6 +1,7 @@
 import React from "react";
-import { BsChatRight } from 'react-icons/bs';
+import { RiChat2Line } from "react-icons/ri"
 import {HashLink} from "react-router-hash-link"
+import StarRatings from 'react-star-ratings';
 
 function randomnum (min, max) {
     min = Math.ceil(min)
@@ -10,6 +11,8 @@ function randomnum (min, max) {
 function randomstar (min, max) {
     return Math.floor(Math.random() * (max-min) + min);
 }
+
+let rando = randomstar (1.0, 5.0)
 
 const RestaurantDetail = ({ restaurant }) => {
     return(
@@ -23,8 +26,12 @@ const RestaurantDetail = ({ restaurant }) => {
                 </div>
                 <span className="show-name">{restaurant.name}</span>
                 <span className="show-address">{restaurant.address}</span>
-                <span className='show-rating'>
-                    {randomstar (1, 5)} stars average rating     <BsChatRight className="chat-icon"/>     {randomnum (50, 1000)} reviews
+                <span className='show-rating'><StarRatings 
+                                                    rating={rando}
+                                                    starDimension="18px"
+                                                    starSpacing=".5px"
+                                                    starRatedColor='#da3743'
+                                                     />         {rando}       <RiChat2Line className="chat-icon"/>     {randomnum (50, 1000)} reviews
                 </span>
                 <span className="show-overview" id="overview">{restaurant.overview}</span>
                 {/* more photos */}
