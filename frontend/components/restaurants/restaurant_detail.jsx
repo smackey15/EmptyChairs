@@ -12,7 +12,7 @@ function randomstar (min, max) {
     return Math.floor(Math.random() * (max-min) + min);
 }
 
-let rando = randomstar (1.0, 5.0)
+let rando = randomstar (2.0, 5.0)
 
 const RestaurantDetail = ({ restaurant }) => {
     return(

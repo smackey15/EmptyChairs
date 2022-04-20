@@ -1,12 +1,45 @@
-// .before-save {
+.favorite-form {
+    position: absolute;
+    // width: 320px;
+    // top: 68px;
+    top: 6.5%;
+    // right: 279px;
+    right: 2.25%;
+}
 
-// }
+.before-save {
+    border: 2px solid #da3743;
+    border-radius: 4px;
+    height: 50px;
+    width: 15vw;
+    background-color: white;
+    color: black;
+}
 
-// .after-save {
-//     display: none;
-// }
+.save-text-line, .unsave-text-line {
+    margin-bottom: 5px;
+}
 
-// .active {
-//     display: block;
-// }
+.empty-icon {
+    zoom: 2;
+    padding-right: 3px;
+    margin-bottom: -5px;
+}
+
+.after-save {
+    border: 2px solid #da3743;
+    border-radius: 4px;
+    height: 50px;
+    width: 15vw;
+    background-color: white;
+    color: black;
+}
+
+.filled-icon {
+    zoom: 2;
+    padding-right: 3px;
+    margin-bottom: -5px;
+    color: #da3743;
+}
+
 
