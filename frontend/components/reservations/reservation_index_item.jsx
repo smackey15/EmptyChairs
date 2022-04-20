@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {HiOutlineUser} from "react-icons/hi"
 import {AiOutlineCalendar} from "react-icons/ai"
+import StarRatings from 'react-star-ratings';
+
 
 const ReservationIndexItem = ({ reservation }) => {
     return(
@@ -16,7 +18,13 @@ const ReservationIndexItem = ({ reservation }) => {
                             <AiOutlineCalendar className='res-icon' />
                             <span className='res-date'>{reservation.date}</span>
                         </div>
-                        <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`} className='review-link'><p className='review-link'>Leave a review</p></Link>
+                        <div className='review-with-stars'>
+                            <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`} className='review-link'><p className='review-link'>Leave a review</p></Link>
+                            <StarRatings 
+                                starDimension="18px"
+                                starSpacing=".5px"
+                            />
+                        </div>
                     </div>
                 </li>
 
