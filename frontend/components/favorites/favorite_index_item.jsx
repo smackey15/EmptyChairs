@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { IoMdBookmark } from "react-icons/io";
 import StarRatings from 'react-star-ratings';
 
+function randomstar (min, max) {
+    return Math.floor(Math.random() * (max-min) + min);
+}
+
 const FavoriteIndexItem = ({ favorite, deleteFavorite, restaurant }) => {
     return(
 
@@ -17,7 +21,7 @@ const FavoriteIndexItem = ({ favorite, deleteFavorite, restaurant }) => {
                         </div>
                         {/* <span className='sav-rate'>rating</span> */}
                         <StarRatings 
-                            rating={3.75}
+                            rating={randomstar(1, 5)}
                             starDimension="18px"
                             starSpacing=".5px"
                             starRatedColor='#feab6c'
