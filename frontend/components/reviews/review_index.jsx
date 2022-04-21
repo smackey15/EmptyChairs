@@ -12,9 +12,9 @@ class ReviewIndex extends React.Component {
 
     render() {
         return(
-            <div className="index-all">
+            <div className="rev-index-all">
                 <h3 id="reviews">What People Are Saying:</h3>
-                <ul className="index-main-rows">{
+                <ul className="rev-index-main-rows">{
                     this.props.reviews.map(review =>
                         <ReviewIndexItem 
                             deleteReview={this.props.deleteReview}

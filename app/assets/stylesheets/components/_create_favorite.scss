@@ -1,14 +1,14 @@
 .favorite-form {
     position: absolute;
     // width: 320px;
-    // top: 68px;
-    top: 6.5%;
-    // right: 279px;
-    right: 2.25%;
+    top: 65px;
+    // top: 6.5%;
+    right: 25px;
+    // right: 2.25%;
 }
 
 .before-save {
-    border: 2px solid #da3743;
+    border: 2px solid lightgray;
     border-radius: 4px;
     height: 50px;
     width: 15vw;
@@ -27,12 +27,16 @@
 }
 
 .after-save {
-    border: 2px solid #da3743;
+    border: 2px solid lightgray;
     border-radius: 4px;
     height: 50px;
     width: 15vw;
     background-color: white;
     color: black;
+}
+
+.before-save:hover, .after-save:hover {
+    border: 2px solid #da3743;
 }
 
 .filled-icon {

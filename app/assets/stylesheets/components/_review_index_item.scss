@@ -1,0 +1,58 @@
+.rev-index-body {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-bottom: 1px solid;
+    border-color: lightgray;
+    // border-radius: 5px;
+    // margin-bottom: 2%;
+    transition: .5s;
+    max-width: 100%;
+    height: 177.5px;
+    padding-top: 20px;
+}
+
+.badge-stuff {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+
+.badge-circle {
+    background-color: orange;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    // background-color: random {
+    //     15% { red; }, 
+    //     30% { background-color: yellow; }, 
+    //     45% { background-color: green; }, 
+    //     60% { background-color: blue; },
+    //     75% { background-color: white; },  
+    // }
+}
+
+.initial {
+    padding-left: 33%;
+    padding-top: 28%;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.rev-nickname {
+    padding-top: 15%;
+    margin-left: 0px;
+}
+
+.rev-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 37.5px;
+
+}
+
+.rev-categories {
+    display: flex;
+    flex-direction: row;
+}
