@@ -1,4 +1,5 @@
 import React from "react";
+import StarRatings from 'react-star-ratings';
 
 class EditReviewForm extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class EditReviewForm extends React.Component {
             id: this.props.reviewId
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeRating = this.changeRating.bind(this);
     }
 
     componentDidMount() {
@@ -64,6 +66,11 @@ class EditReviewForm extends React.Component {
         )
     }
 
+    changeRating(newRating, name) {
+        this.setState({ [name]: newRating })
+    }
+
+
     render() {
 
         if (!this.props.restaurant) return null;
@@ -78,9 +85,108 @@ class EditReviewForm extends React.Component {
                 >
                 <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
                 <br />
-                <h3>Rate your dining experience</h3>
+                <h3>Rate your dining experience (required)</h3>
+                <label className="">Overall
+                    <StarRatings 
+                        rating={this.state.overall}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="overall"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
+                            onChange={this.handleInput("overall")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> */}
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Food
+                    <StarRatings 
+                        rating={this.state.food}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="food"
+                        numberOfStars={5}
+                    />
 
-                    <label className="">Overall
+                        {/* <select 
+                            onChange={this.handleInput("food")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> */}
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Service
+                    <StarRatings 
+                        rating={this.state.service}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="service"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
+                            onChange={this.handleInput("service")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> */}
+                    </label>
+                    <br />
+                    <br />
+                    <label className="">Ambience
+                    <StarRatings 
+                        rating={this.state.ambience}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="ambience"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
+                            onChange={this.handleInput("ambience")}
+                            className="">
+                            <option defaultValue="--">--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select> */}
+                    </label>
+
+                    {/* <label className="">Overall
                         <select 
                             onChange={this.handleInput("overall")}
                             className=""
@@ -137,7 +243,7 @@ class EditReviewForm extends React.Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                    </label>
+                    </label> */}
                     <br />
                     <br />
                     <h2>Write a review</h2>

@@ -1,4 +1,5 @@
 import React from "react";
+import StarRatings from 'react-star-ratings';
 
 class CreateReviewForm extends React.Component {
     constructor(props) {
@@ -6,18 +7,18 @@ class CreateReviewForm extends React.Component {
         this.state = {
             nickname: "",
             body: "",
-            overall: "",
-            food: "",
-            service: "",
-            ambience: "",
+            overall: 0,
+            food: 0,
+            service: 0,
+            ambience: 0,
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.changeRating = this.changeRating.bind(this);
     }
 
     componentDidMount() {
-
         if (!this.props.restaurant) {
             this.props.fetchRestaurants()
         }
@@ -51,12 +52,16 @@ class CreateReviewForm extends React.Component {
         )
     }
 
+    changeRating(newRating, name) {
+        this.setState({ [name]: newRating })
+    }
+
     render() {
 
         if (!this.props.restaurant) return null;
 
         return(
-            <div>
+            <div className="review-form">
                 <form
                     onSubmit={this.handleSubmit} 
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
@@ -64,10 +69,21 @@ class CreateReviewForm extends React.Component {
                 >
                 <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
                 <br />
-                <h3>Rate your dining experience</h3>
+                <h3>Rate your dining experience (required)</h3>
 
-                    <label className="">Overall
-                        <select 
+                    <label className="categories">Overall</label>
+                    <StarRatings 
+                        rating={this.state.overall}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="overall"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
                             onChange={this.handleInput("overall")}
                             className="">
                             <option defaultValue="--">--</option>
@@ -76,12 +92,24 @@ class CreateReviewForm extends React.Component {
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
-                    </label>
+                        </select> */}
+                    
                     <br />
                     <br />
-                    <label className="">Food
-                        <select 
+                    <label className="categories">Food</label>
+                    <StarRatings 
+                        rating={this.state.food}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="food"
+                        numberOfStars={5}
+                    />
+
+                        {/* <select 
                             onChange={this.handleInput("food")}
                             className="">
                             <option defaultValue="--">--</option>
@@ -90,12 +118,23 @@ class CreateReviewForm extends React.Component {
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
-                    </label>
+                        </select> */}
+                    
                     <br />
                     <br />
-                    <label className="">Service
-                        <select 
+                    <label className="categories">Service</label>
+                    <StarRatings 
+                        rating={this.state.service}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="service"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
                             onChange={this.handleInput("service")}
                             className="">
                             <option defaultValue="--">--</option>
@@ -104,12 +143,23 @@ class CreateReviewForm extends React.Component {
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
-                    </label>
+                        </select> */}
+                    
                     <br />
                     <br />
-                    <label className="">Ambience
-                        <select 
+                    <label className="categories">Ambience</label>
+                    <StarRatings 
+                        rating={this.state.ambience}
+                        starDimension="40px"
+                        starSpacing=".5px"
+                        starRatedColor='#da3743'
+                        starHoverColor='#da3743'
+                        starEmptyColor='#e5e4e2'
+                        changeRating={this.changeRating}
+                        name="ambience"
+                        numberOfStars={5}
+                    />
+                        {/* <select 
                             onChange={this.handleInput("ambience")}
                             className="">
                             <option defaultValue="--">--</option>
@@ -118,8 +168,8 @@ class CreateReviewForm extends React.Component {
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                        </select>
-                    </label>
+                        </select> */}
+                    
                     <br />
                     <br />
                     <h2>Write a review</h2>
@@ -127,7 +177,10 @@ class CreateReviewForm extends React.Component {
                     <div className="textarea__wrapper">
                     <textarea
                         onChange={this.handleInput("body")}
-                        // countLimit={2000}
+                        cols="78"
+                        rows="12"
+                        maxLength={2000}
+                        className="body-box"
                         placeholder="Your review must be at least 50 characters"/>
                         <br />
                         <span className="textarea__count">0/2000</span>
