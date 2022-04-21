@@ -8,10 +8,10 @@ import { RiChat2Line } from "react-icons/ri"
 const ReviewIndexItem = ({ review, currentUser, deleteReview, reviews }) => {
     let history = useHistory();
     let display = currentUser?.id === review.user_id ?
-        <div>
-            <Link to={`/restaurants/${review.restaurant_id}/reviews/${review.id}/form`}><span className=''>Edit Review</span></Link>
+        <div className='rev-action'>
+            <Link to={`/restaurants/${review.restaurant_id}/reviews/${review.id}/form`}className='rev-edit-link'><span >Modify Review</span></Link>
             <span 
-                className=''
+                className='rev-delete-link'
                 onClick={() => deleteReview(review.id)
                 .then(() => {history.push(`/revdelete`)})}
             >
@@ -35,7 +35,7 @@ const ReviewIndexItem = ({ review, currentUser, deleteReview, reviews }) => {
                         <span className='badge-circle'><p className='initial'>{review.nickname[0].toUpperCase()}</p></span>
                         <span className='rev-nickname'>{review.nickname}</span>
                         <span className='rev-location'>New York</span>
-                        <span className='rev-count'><RiChat2Line/> {reviews.length} reviews</span>
+                        <span className='rev-count'><RiChat2Line/> {reviews.length} review(s)</span>
                     </div>
                     <div className='rev-content'>
                         <StarRatings 
@@ -45,12 +45,16 @@ const ReviewIndexItem = ({ review, currentUser, deleteReview, reviews }) => {
                             starRatedColor='#da3743'
                         />
                         <div className='rev-categories'>
-                            <span className=''>Overall: {review.overall}</span>
-                            <span className=''>Food: {review.food}</span>
-                            <span className=''>Service: {review.service}</span>
-                            <span className=''>Ambience: {review.ambience}</span>
+                            <span className=''>Overall </span>
+                            <p className=''>{review.overall}</p>
+                            <span className=''>&bull; Food </span>
+                            <p className=''>{review.food}</p>
+                            <span className=''>&bull; Service </span>
+                            <p className=''>{review.service}</p>
+                            <span className=''>&bull; Ambience </span>
+                            <p className=''>{review.ambience}</p>
                         </div>
-                        <span className=''>{review.body}</span>
+                        <span className='rev-textbody'>{review.body}</span>
                         <span>{display}</span>
                     </div>
                 </li>

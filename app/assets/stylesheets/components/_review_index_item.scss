@@ -73,10 +73,45 @@
     display: flex;
     flex-direction: column;
     padding-left: 37.5px;
-
 }
 
 .rev-categories {
     display: flex;
     flex-direction: row;
+    padding-top: 2%;
+    color:black;
+    font-weight: 550;
+    font-size: 15px;
+}
+
+.rev-categories span {
+    padding-right: 8px;
+}
+
+.rev-categories p {
+    color: #da3743;
+    font-weight: 550;
+    font-size: 15px;
+    padding-right: 5px;
+}
+
+.rev-textbody {
+    padding-top: 4%;
+    line-height: 25px;
+    word-break: break-word;
+}
+
+.rev-action {
+    display: flex;
+    padding-top: 50px;
+    // position: relative;
+}
+
+.rev-edit-link, .rev-delete-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: #da3743;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid lightgrey;
 }
