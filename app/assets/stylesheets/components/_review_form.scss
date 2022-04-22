@@ -1,17 +1,17 @@
-// .poor {
-//     display: none;
-// }
+.poor {
+    display: none;
+}
 
 // StarRatings:hover {
 //     .poor {
 //         display: block;
 //     }
 // }
-// StarRatings [title="1 star"]:hover {
-//     .poor {
-//         display: block;
-//     }
-// }
+div::title:hover {
+    .poor {
+        display: block;
+    }
+}
 
 .review-form {
     display: flex;
@@ -38,8 +38,45 @@
 }
 
 .body-box {
-    text-decoration: none;
-    border: solid 1px lightgray;
-    border-radius: 4px;
+    border: solid 1px gray;
+    border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    resize: none;
+    outline: none;
 }
+
+textarea {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+#nick {
+    width: 99%;
+    height: 50px;
+    outline: none;
+
+}
+
+.review-button {
+    border: solid 1px;
+    border-radius: 4px;
+    height: 50px;
+    width: 12vw;
+    // margin-right: 70px;
+    // margin-left: 5px;
+    background-color: #da3743;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background-color: #b8222d;
+}
+
+// textarea::placeholder {
+//     padding-top: 10px;
+//     padding-left: 5px;
+// }

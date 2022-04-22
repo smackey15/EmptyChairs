@@ -83,6 +83,7 @@ class CreateReviewForm extends React.Component {
                         name="overall"
                         numberOfStars={5}
                     />
+                    <p className="poor">poor</p>
                         {/* <select 
                             onChange={this.handleInput("overall")}
                             className="">
@@ -177,9 +178,9 @@ class CreateReviewForm extends React.Component {
                     <div className="textarea__wrapper">
                     <textarea
                         onChange={this.handleInput("body")}
-                        cols="78"
+                        cols="82"
                         rows="12"
-                        maxLength={2000}
+                        maxLength="2000"
                         className="body-box"
                         placeholder="Your review must be at least 50 characters"/>
                         <br />
@@ -193,6 +194,7 @@ class CreateReviewForm extends React.Component {
                         placeholder="Nickname"
                         value={this.state.nickname}
                         onChange={this.handleInput("nickname")}
+                        id="nick"
                     />
                     <br />
                     <br />

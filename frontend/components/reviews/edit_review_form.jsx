@@ -77,7 +77,7 @@ class EditReviewForm extends React.Component {
         if (!this.props.review) return null;
 
         return(
-            <div>
+            <div className="review-form">
                 <form
                     onSubmit={this.handleSubmit} 
                     onKeyPress={ (e) => {e.key === "Enter" ? this.handleSubmit(e) : null}}
@@ -86,7 +86,7 @@ class EditReviewForm extends React.Component {
                 <h2>{this.props.currentUser.first_name}, how was your experience at {this.props.restaurant.name}</h2>
                 <br />
                 <h3>Rate your dining experience (required)</h3>
-                <label className="">Overall
+                <label className="categories">Overall</label>
                     <StarRatings 
                         rating={this.state.overall}
                         starDimension="40px"
@@ -108,10 +108,9 @@ class EditReviewForm extends React.Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select> */}
-                    </label>
                     <br />
                     <br />
-                    <label className="">Food
+                    <label className="categories">Food</label>
                     <StarRatings 
                         rating={this.state.food}
                         starDimension="40px"
@@ -134,10 +133,9 @@ class EditReviewForm extends React.Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select> */}
-                    </label>
                     <br />
                     <br />
-                    <label className="">Service
+                    <label className="categories">Service</label>
                     <StarRatings 
                         rating={this.state.service}
                         starDimension="40px"
@@ -159,10 +157,9 @@ class EditReviewForm extends React.Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select> */}
-                    </label>
                     <br />
                     <br />
-                    <label className="">Ambience
+                    <label className="categories">Ambience</label>
                     <StarRatings 
                         rating={this.state.ambience}
                         starDimension="40px"
@@ -184,7 +181,6 @@ class EditReviewForm extends React.Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select> */}
-                    </label>
 
                     {/* <label className="">Overall
                         <select 
@@ -251,7 +247,10 @@ class EditReviewForm extends React.Component {
                     <div className="textarea__wrapper">
                     <textarea
                         onChange={this.handleInput("body")}
-                        // countLimit={2000}
+                        cols="82"
+                        rows="12"
+                        maxLength="2000"
+                        className="body-box"
                         placeholder="Your review must be at least 50 characters"
                         value={this.state.body}
                         />
@@ -266,6 +265,7 @@ class EditReviewForm extends React.Component {
                         placeholder="Nickname"
                         value={this.state.nickname}
                         onChange={this.handleInput("nickname")}
+                        id="nick"
                     />
                     <br />
                     <br />
