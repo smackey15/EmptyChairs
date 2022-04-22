@@ -56,7 +56,7 @@ class CreateReviewForm extends React.Component {
             nickname: this.state.nickname,
             body: this.state.body,
             overall: this.state.overall,
-            food: this.state.overall,
+            food: this.state.food,
             service: this.state.service,
             ambience: this.state.ambience,
             restaurant_id: this.state.restaurant_id,  

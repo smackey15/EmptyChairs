@@ -13,7 +13,9 @@ class EditReviewForm extends React.Component {
             ambience: this.props.review?.ambience,
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id,
-            id: this.props.reviewId
+            id: this.props.reviewId,
+            characterCount: 0,
+            nickCount: 0
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeRating = this.changeRating.bind(this);
@@ -43,16 +45,48 @@ class EditReviewForm extends React.Component {
     }
 
     handleInput(type) {
-        return (e) => this.setState({ [type]: e.target.value})
+        return (e) => {
+            if (e.target.getAttribute("class") === "body-box") {
+                this.setState({
+                    characterCount: e.target.value.length 
+                    })
+                }
+            if (e.target.getAttribute("class") === "nick") {
+                this.setState({
+                    nickCount: e.target.value.length 
+                    })
+                }
+            this.setState({ [type]: e.target.value})}
     }
-
+    // handleInput(type) {
+    //     return (e) => this.setState({ [type]: e.target.value})
+    // }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateReview(this.state)
+        const formData = {
+            nickname: this.state.nickname,
+            body: this.state.body,
+            overall: this.state.overall,
+            food: this.state.food,
+            service: this.state.service,
+            ambience: this.state.ambience,
+            restaurant_id: this.state.restaurant_id,  
+            user_id: this.state.user_id,
+            id: this.props.review.id
+        }
+        this.props.updateReview(formData)
             .then((review) => { 
                 this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
             })
     }
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     this.props.updateReview(this.state)
+    //         .then((review) => { 
+    //             this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
+    //         })
+    // }
 
     renderErrors() {
         return(
@@ -98,16 +132,6 @@ class EditReviewForm extends React.Component {
                         name="overall"
                         numberOfStars={5}
                     />
-                        {/* <select 
-                            onChange={this.handleInput("overall")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
                     <br />
                     <br />
                     <label className="categories">Food</label>
@@ -122,17 +146,6 @@ class EditReviewForm extends React.Component {
                         name="food"
                         numberOfStars={5}
                     />
-
-                        {/* <select 
-                            onChange={this.handleInput("food")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
                     <br />
                     <br />
                     <label className="categories">Service</label>
@@ -147,16 +160,6 @@ class EditReviewForm extends React.Component {
                         name="service"
                         numberOfStars={5}
                     />
-                        {/* <select 
-                            onChange={this.handleInput("service")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
                     <br />
                     <br />
                     <label className="categories">Ambience</label>
@@ -171,91 +174,26 @@ class EditReviewForm extends React.Component {
                         name="ambience"
                         numberOfStars={5}
                     />
-                        {/* <select 
-                            onChange={this.handleInput("ambience")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
-
-                    {/* <label className="">Overall
-                        <select 
-                            onChange={this.handleInput("overall")}
-                            className=""
-                            value={this.state.overall}
-                            >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </label>
-                    <br />
-                    <br />
-                    <label className="">Food
-                        <select 
-                            onChange={this.handleInput("food")}
-                            className=""
-                            value={this.state.food}
-                            >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </label>
-                    <br />
-                    <br />
-                    <label className="">Service
-                        <select 
-                            onChange={this.handleInput("service")}
-                            className=""
-                            value={this.state.service}
-                            >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </label>
-                    <br />
-                    <br />
-                    <label className="">Ambience
-                        <select 
-                            onChange={this.handleInput("ambience")}
-                            className=""
-                            value={this.state.ambience}
-                            >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </label> */}
                     <br />
                     <br />
                     <h2>Write a review</h2>
                     <h3>Help diners decide where to eat. Remember to keep it short, simple and specific.</h3>
-                    <div className="textarea__wrapper">
-                    <textarea
-                        onChange={this.handleInput("body")}
-                        cols="82"
-                        rows="12"
-                        maxLength="2000"
-                        className="body-box"
-                        placeholder="Your review must be at least 50 characters"
-                        value={this.state.body}
+                    <div className="textarea-wrapper">
+                        <textarea
+                            onChange={this.handleInput("body")}
+                            cols="82"
+                            rows="12"
+                            maxLength="2000"
+                            className="body-box"
+                            placeholder="Your review must be at least 50 characters"
+                            value={this.state.body}
                         />
                         <br />
-                        <span className="textarea__count">0/2000</span>
+                        <span id="min-text">Minimum 50 characters</span>
+                        <div id="count-box">
+                                <span id="current-box">{this.state.characterCount} </span>
+                                <span id="maximum-box">/ 2000 characters</span>
+                            </div>
                     </div>
                     <br />
                     <br />
@@ -265,8 +203,15 @@ class EditReviewForm extends React.Component {
                         placeholder="Nickname"
                         value={this.state.nickname}
                         onChange={this.handleInput("nickname")}
-                        id="nick"
+                        className="nick"
                     />
+                    <br />
+                    <span id="min-text">Minimum 5 characters</span>
+                            <div id="count-nick">
+                                <span id="current-nick">{this.state.nickCount} </span>
+                                <span id="maximum-nick">/ 24 characters</span>
+                            </div>
+
                     <br />
                     <br />
                     <button className="review-button">Submit</button>
