@@ -12,11 +12,17 @@ class CreateReviewForm extends React.Component {
             service: 0,
             ambience: 0,
             restaurant_id: this.props.restaurantId,  
-            user_id: this.props.currentUser.id
+            user_id: this.props.currentUser.id,
+            characterCount: 0
         }
+        // if (this.state.characterCount < 50) {
+        //     this.state.characterCount.css('color', '#da3743');
+        // }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeRating = this.changeRating.bind(this);
     }
+
 
     componentDidMount() {
         if (!this.props.restaurant) {
@@ -29,12 +35,28 @@ class CreateReviewForm extends React.Component {
     }
 
     handleInput(type) {
-        return (e) => this.setState({ [type]: e.target.value})
+        return (e) => {
+            if (e.target.getAttribute("class") === "body-box") {
+                this.setState({
+                    characterCount: e.target.value.length 
+                    })
+                }
+            this.setState({ [type]: e.target.value})}
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createReview(this.state)
+        const formData = {
+            nickname: this.state.nickname,
+            body: this.state.body,
+            overall: this.state.overall,
+            food: this.state.overall,
+            service: this.state.service,
+            ambience: this.state.ambience,
+            restaurant_id: this.state.restaurant_id,  
+            user_id: this.state.user_id,
+        }
+        this.props.createReview(formData)
             .then((review) => { 
                 this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
             })
@@ -60,6 +82,7 @@ class CreateReviewForm extends React.Component {
 
         if (!this.props.restaurant) return null;
 
+    
         return(
             <div className="review-form">
                 <form
@@ -72,7 +95,7 @@ class CreateReviewForm extends React.Component {
                 <h3>Rate your dining experience (required)</h3>
 
                     <label className="categories">Overall</label>
-                    <StarRatings 
+                    <StarRatings className="stars"
                         rating={this.state.overall}
                         starDimension="40px"
                         starSpacing=".5px"
@@ -98,7 +121,7 @@ class CreateReviewForm extends React.Component {
                     <br />
                     <br />
                     <label className="categories">Food</label>
-                    <StarRatings 
+                    <StarRatings className="stars"
                         rating={this.state.food}
                         starDimension="40px"
                         starSpacing=".5px"
@@ -124,7 +147,7 @@ class CreateReviewForm extends React.Component {
                     <br />
                     <br />
                     <label className="categories">Service</label>
-                    <StarRatings 
+                    <StarRatings className="stars"
                         rating={this.state.service}
                         starDimension="40px"
                         starSpacing=".5px"
@@ -149,7 +172,7 @@ class CreateReviewForm extends React.Component {
                     <br />
                     <br />
                     <label className="categories">Ambience</label>
-                    <StarRatings 
+                    <StarRatings className="stars"
                         rating={this.state.ambience}
                         starDimension="40px"
                         starSpacing=".5px"
@@ -175,16 +198,21 @@ class CreateReviewForm extends React.Component {
                     <br />
                     <h2>Write a review</h2>
                     <h3>Help diners decide where to eat. Remember to keep it short, simple and specific.</h3>
-                    <div className="textarea__wrapper">
-                    <textarea
-                        onChange={this.handleInput("body")}
-                        cols="82"
-                        rows="12"
-                        maxLength="2000"
-                        className="body-box"
-                        placeholder="Your review must be at least 50 characters"/>
-                        <br />
-                        <span className="textarea__count">0/2000</span>
+                    <div className="textarea-wrapper">
+                        <textarea
+                            onChange={this.handleInput("body")}
+                            cols="82"
+                            rows="12"
+                            maxLength="2000"
+                            className="body-box"
+                            placeholder="Your review must be at least 50 characters"
+                        />
+                            <br />
+                            <span id="min-text">Minimum 50 characters</span>
+                            <div id="count">
+                                <span id="current">{this.state.characterCount} </span>
+                                <span id="maximum">/ 2000 characters</span>
+                            </div>
                     </div>
                     <br />
                     <br />

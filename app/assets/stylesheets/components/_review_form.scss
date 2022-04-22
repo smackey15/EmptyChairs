@@ -33,9 +33,15 @@ div::title:hover {
 
 .categories {
     padding-right: 3%;
+    // padding-left: 25%;
+    // padding-top: 3%;
     font-weight: 550;
-    // margin-left: -25%;
+    // float: left;
 }
+
+// .stars {
+//     align-items: left;
+// }
 
 .body-box {
     border: solid 1px gray;
@@ -49,6 +55,16 @@ div::title:hover {
 textarea {
     padding-top: 10px;
     padding-left: 5px;
+}
+
+#count {
+    float: right;
+    color: gray;
+}
+
+#min-text {
+    float: left;
+    color: gray;
 }
 
 #nick {
