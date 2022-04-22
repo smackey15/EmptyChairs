@@ -6,7 +6,7 @@ class CreateReviewForm extends React.Component {
         super(props)
         this.state = {
             nickname: "",
-            body: "",
+            body: 0,
             overall: 0,
             food: 0,
             service: 0,
@@ -106,18 +106,6 @@ class CreateReviewForm extends React.Component {
                         name="overall"
                         numberOfStars={5}
                     />
-                    <p className="poor">poor</p>
-                        {/* <select 
-                            onChange={this.handleInput("overall")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
-                    
                     <br />
                     <br />
                     <label className="categories">Food</label>
@@ -131,19 +119,7 @@ class CreateReviewForm extends React.Component {
                         changeRating={this.changeRating}
                         name="food"
                         numberOfStars={5}
-                    />
-
-                        {/* <select 
-                            onChange={this.handleInput("food")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
-                    
+                    />                    
                     <br />
                     <br />
                     <label className="categories">Service</label>
@@ -158,17 +134,6 @@ class CreateReviewForm extends React.Component {
                         name="service"
                         numberOfStars={5}
                     />
-                        {/* <select 
-                            onChange={this.handleInput("service")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
-                    
                     <br />
                     <br />
                     <label className="categories">Ambience</label>
@@ -183,17 +148,6 @@ class CreateReviewForm extends React.Component {
                         name="ambience"
                         numberOfStars={5}
                     />
-                        {/* <select 
-                            onChange={this.handleInput("ambience")}
-                            className="">
-                            <option defaultValue="--">--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> */}
-                    
                     <br />
                     <br />
                     <h2>Write a review</h2>
