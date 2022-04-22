@@ -13,7 +13,8 @@ class CreateReviewForm extends React.Component {
             ambience: 0,
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id,
-            characterCount: 0
+            characterCount: 0,
+            nickCount: 0
         }
         // if (this.state.characterCount < 50) {
         //     this.state.characterCount.css('color', '#da3743');
@@ -39,6 +40,11 @@ class CreateReviewForm extends React.Component {
             if (e.target.getAttribute("class") === "body-box") {
                 this.setState({
                     characterCount: e.target.value.length 
+                    })
+                }
+            if (e.target.getAttribute("class") === "nick") {
+                this.setState({
+                    nickCount: e.target.value.length 
                     })
                 }
             this.setState({ [type]: e.target.value})}
@@ -163,9 +169,9 @@ class CreateReviewForm extends React.Component {
                         />
                             <br />
                             <span id="min-text">Minimum 50 characters</span>
-                            <div id="count">
-                                <span id="current">{this.state.characterCount} </span>
-                                <span id="maximum">/ 2000 characters</span>
+                            <div id="count-box">
+                                <span id="current-box">{this.state.characterCount} </span>
+                                <span id="maximum-box">/ 2000 characters</span>
                             </div>
                     </div>
                     <br />
@@ -174,10 +180,17 @@ class CreateReviewForm extends React.Component {
                     <h3>Your nickname will be published on EmptyChairs alongside any reviews you create and publish. For privacy reasons, don’t use your full name or email address.</h3>
                     <input
                         placeholder="Nickname"
+                        maxLength="24"
                         value={this.state.nickname}
                         onChange={this.handleInput("nickname")}
-                        id="nick"
+                        className="nick"
                     />
+                    <br />
+                            <span id="min-text">Minimum 5 characters</span>
+                            <div id="count-nick">
+                                <span id="current-nick">{this.state.nickCount} </span>
+                                <span id="maximum-nick">/ 24 characters</span>
+                            </div>
                     <br />
                     <br />
                     <button className="review-button">Submit</button>
