@@ -10,6 +10,11 @@
 
 .confirm-all {
     display: flex;
+    flex-direction: column;
+}
+
+.toptwo {
+    display: flex;
 }
 
 .confirm-details {
@@ -26,43 +31,51 @@
 
 .user-icon {
     zoom: 1.25;
-    margin-bottom: -8%;
+    padding-right: 3%;
+    // margin-bottom: -8%;
 }
 .user {
-    width: 45px;
+    // width: 45px;
+    padding-right: 3%;
+    padding-top: 1%;
 }
 
 .date-icon {
     zoom: 1.25;
-    margin-bottom: -7%;
+    padding-right: 3%;
+    // margin-bottom: -7%;
 }
 
 .date {
-    width: 120px;
-    top: 100%;
-    line-height: 80%;
-
+    // width: 120px;
+    // top: 100%;
+    // line-height: 80%;
+    padding-top: 1%;
+    padding-right: 3%;
+    white-space: nowrap;
 }
 
 .time {
-    margin-top: 6.5px;
+    // margin-top: 6.5px;
     width: 85px;
+    padding-top: 1%;
+
 }
 
 .three-icons {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-top: 5%;
     font-weight: 600;
 }
 
 .helpers {
     display: flex;
-    margin-top: 15%;
-    justify-content: space-between;
+    margin-top: 30px;
+    padding-left: 20%;
 }
 
-.browse {
+.browse, .directions {
     border: solid 1px lightgrey;
     border-radius: 5px;
     height: 70px;
@@ -70,10 +83,12 @@
     background-color: transparent;
     box-shadow: 0px 1px 10px lightgray;
     cursor: pointer;
-    margin-left: -260px;
+    // float: left;
+    // margin-left: -260px;
+    padding-right: 20px;
 }
 
-.browse:hover {
+.browse:hover, .directions:hover {
     background-color: #f1f2f4;
 }
 
@@ -82,13 +97,30 @@
     color: #da3743;
 }
 
+.browse-link {
+    padding-right: 20px;
+}
+
 .cancel {
     color: #da3743;
     margin-top: 5%;
     cursor: pointer;
-    width: 22.5%;
+    width: 50px;
     border-right: solid 1px lightgray;
     border-left: solid 1px lightgray;
-    padding-left: 2.5%;
+    padding-left: 5px;
+    padding-right: 5px;
 
+}
+
+.bottom-details {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    padding-left: 20%;
+    width: 500px;
+}
+
+.bottom-details span p {
+    text-align: center;
 }

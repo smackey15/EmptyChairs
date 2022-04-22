@@ -58,9 +58,7 @@ class EditReviewForm extends React.Component {
                 }
             this.setState({ [type]: e.target.value})}
     }
-    // handleInput(type) {
-    //     return (e) => this.setState({ [type]: e.target.value})
-    // }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = {
@@ -79,14 +77,6 @@ class EditReviewForm extends React.Component {
                 this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
             })
     }
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.updateReview(this.state)
-    //         .then((review) => { 
-    //             this.props.history.push(`/restaurants/${review.review.restaurant_id}`)
-    //         })
-    // }
 
     renderErrors() {
         return(

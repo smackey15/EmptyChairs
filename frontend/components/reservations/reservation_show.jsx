@@ -20,13 +20,16 @@ class ReservationShow extends React.Component {
 
         return(
             <div className="confirm-all">
+                <div className="toptwo">
                 <img className="confirm-photo" src={this.props.reservation.photoUrl} alt="" />
                 <div className="confirm-details">
                     <h2>{this.props.reservation.restaurantName}</h2>
                     <p className="confirmed"><AiFillCheckCircle className="confirm-icon" /> Reservation confirmed</p>
                         <div className="three-icons">
-                            <p className="user"><HiOutlineUser className="user-icon" />  {this.props.reservation.party_size}</p>
-                            <p className="date"><AiOutlineCalendar className="date-icon"/>  {this.props.reservation.date} at </p> 
+                            <HiOutlineUser className="user-icon" />
+                            <p className="user">{this.props.reservation.party_size}</p>
+                            <AiOutlineCalendar className="date-icon"/>
+                            <p className="date">{this.props.reservation.date} at </p> 
                             <p className="time">{this.props.reservation.time}</p> 
                         </div>
                         {/* <button onClick={() => this.props.openModal("editreservation")}>Modify</button> */}
@@ -34,16 +37,24 @@ class ReservationShow extends React.Component {
                             className="cancel" 
                             onClick={(e) => this.props.deleteReservation(this.props.match.params.id)
                             .then(() => {this.props.history.push(`/rescancel`)})}
-                        >
-                            Cancel</p>
+                        >Cancel</p>
+                </div>
+                </div>
+
                             <div className="helpers">
-                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
+                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`} className="browse-link"><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
                                 <br />
                                 Restaurant's Profile</button></Link>
+                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="directions"><AiFillRead className="browse-icon" /> Get directions
+                                <br />
+                                </button></Link>
                                 {/* <p>Get Directions</p> */}
                             </div>
-                    {/* <h3>Who's going?</h3>
-                    <p>{this.props.reservation.first_name}</p>  */}
+                <div className="bottom-details">
+                    <h3>Who's going?</h3>
+                    <span className='badge-circle'><p className='initial'>{this.props.reservation.first_name[0]} {this.props.reservation.last_name[0]}</p></span>
+                    <p>{this.props.reservation.first_name} {this.props.reservation.last_name[0]}.</p> 
+                    <p>Host</p>
                 </div>
                 <br />
                 <br />

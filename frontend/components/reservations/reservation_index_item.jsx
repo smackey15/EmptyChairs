@@ -7,7 +7,8 @@ import StarRatings from 'react-star-ratings';
 
 const ReservationIndexItem = ({ reservation }) => {
     return(
-        <div>
+        <div>   
+                <Link to={`/reservations/${reservation.id}`} className="full-link">
                 <li className='res-index-body'>
                     <img className='res-photo-main-index' src={reservation.photoUrl} alt="" />
                     <div className='res-content'>
@@ -27,7 +28,7 @@ const ReservationIndexItem = ({ reservation }) => {
                         </div>
                     </div>
                 </li>
-
+                </Link>
         </div>
     )
 }
