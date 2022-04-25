@@ -40,11 +40,18 @@ class ReservationShow extends React.Component {
                         >Cancel</p>
                 </div>
                 </div>
-
                             <div className="helpers">
-                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`} className="browse-link"><button className="browse"><AiFillRead className="browse-icon" /> Browse menu
-                                <br />
-                                Restaurant's Profile</button></Link>
+                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`} className="browse-link">
+                                    <button className="browse">
+                                        <div className="browse-all">
+                                            <AiFillRead className="browse-icon" /> 
+                                            <div className="browse-words">
+                                                <span className="browse-menu">Browse menu</span>
+                                                <span>Restaurant's profile</span>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </Link>
                                 <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="directions"><AiFillRead className="browse-icon" /> Get directions
                                 <br />
                                 </button></Link>

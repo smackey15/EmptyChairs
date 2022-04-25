@@ -75,6 +75,21 @@
     padding-left: 20%;
 }
 
+.browse-all {
+    display: flex;
+    padding-left: 15%;
+}
+
+.browse-words {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+}
+
+.browse-menu {
+    text-align: left;
+}
+
 .browse, .directions {
     border: solid 1px lightgrey;
     border-radius: 5px;
@@ -93,8 +108,9 @@
 }
 
 .browse-icon {
-    zoom: 2.25;
+    zoom: 3.5;
     color: #da3743;
+    padding-right: 5%;
 }
 
 .browse-link {
@@ -121,6 +137,6 @@
     width: 500px;
 }
 
-.bottom-details span p {
-    text-align: center;
-}
+// .bottom-details span {
+//     text-align: center;
+// }

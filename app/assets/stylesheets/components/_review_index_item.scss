@@ -7,8 +7,10 @@
     // border-radius: 5px;
     // margin-bottom: 2%;
     transition: .5s;
-    max-width: 100%;
-    height: 177.5px;
+    // max-width: 100%;
+    // height: 177.5px;
+    height: 100%;
+    width: 100%;
     padding-top: 20px;
 }
 
@@ -43,6 +45,7 @@
 .rev-nickname {
     padding-top: 15%;
     margin-left: -18px;
+    width: 100px;
     word-break: break-word;
     font-weight: 500;
     color: black;
@@ -99,11 +102,13 @@
     padding-top: 4%;
     line-height: 25px;
     word-break: break-word;
+    padding-bottom: 20px;
 }
 
 .rev-action {
     display: flex;
-    padding-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     // position: relative;
 }
 

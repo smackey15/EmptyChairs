@@ -14,6 +14,7 @@ class EditReviewForm extends React.Component {
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id,
             id: this.props.reviewId,
+            // characterCount: this.props.review?.body.length,
             characterCount: 0,
             nickCount: 0
         } 
