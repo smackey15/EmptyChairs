@@ -41,6 +41,10 @@
     cursor: pointer;
 }
 
+.reservation-button:hover {
+    background-color: #b8222d;
+}
+
 .party, .date, .time {
     font-size: 14px;
 

@@ -70,8 +70,11 @@
 .menu-link {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    color: darkslategray; 
+    color: #da3743;; 
+}
 
+.menu-link:hover {
+    color: #b8222d;
 }
 
 .show-menu {
