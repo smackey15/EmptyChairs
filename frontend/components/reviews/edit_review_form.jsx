@@ -53,12 +53,39 @@ class EditReviewForm extends React.Component {
                     characterCount: e.target.value.length 
                     })
                 }
+
+            if (this.state.characterCount < 50) {
+                document.getElementsByClassName("current-box")[0].style.color='#b8222d'
+                    } else {
+                document.getElementsByClassName("current-box")[0].style.color='gray'        
+                    }
+                
+                if ((this.state.characterCount >= 1) && (this.state.characterCount < 50)) {
+                    document.getElementsByClassName("body-box")[0].style.outlineColor="#b8222d"
+                } else {
+                    document.getElementsByClassName("body-box")[0].style.outlineColor="lightblue"
+                    }
+        
             if (e.target.getAttribute("class") === "nick") {
                 this.setState({
                     nickCount: e.target.value.length 
                     })
                 }
-            this.setState({ [type]: e.target.value})}
+
+            if (this.state.nickCount < 4) {
+                document.getElementById("current-nick").style.color='#b8222d'
+            } else {
+                document.getElementById("current-nick").style.color='gray'
+                }
+
+            if (this.state.nickCount < 4) {
+                document.getElementsByClassName("nick")[0].style.outlineColor='#b8222d'
+            } else {
+                document.getElementsByClassName("nick")[0].style.outlineColor='lightblue'
+                }
+    
+            this.setState({ [type]: e.target.value})
+        }
     }
 
     handleSubmit(e) {
@@ -183,7 +210,7 @@ class EditReviewForm extends React.Component {
                         <br />
                         <span id="min-text">Minimum 50 characters</span>
                         <div id="count-box">
-                                <span id="current-box">{this.state.characterCount} </span>
+                                <span class="current-box">{this.state.characterCount} </span>
                                 <span id="maximum-box">/ 2000 characters</span>
                             </div>
                     </div>
