@@ -14,9 +14,8 @@ class EditReviewForm extends React.Component {
             restaurant_id: this.props.restaurantId,  
             user_id: this.props.currentUser.id,
             id: this.props.reviewId,
-            // characterCount: this.props.review?.body.length,
-            characterCount: 0,
-            nickCount: 0
+            characterCount: this.props.review?.body.length,
+            nickCount: this.props.review?.nickname.length
         } 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeRating = this.changeRating.bind(this);
@@ -37,6 +36,8 @@ class EditReviewForm extends React.Component {
                 food: this.props.review.food,
                 service: this.props.review.service,
                 ambience: this.props.review.ambience,
+                characterCount: this.props.review?.body.length,
+                nickCount: this.props.review?.nickname.length    
             })
         }
     }
