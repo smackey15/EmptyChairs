@@ -1,6 +1,6 @@
 ## Description
 
-EmptyChairs is a clone of OpenTable, the popular restaurant reservation app. Logged in users or non-users can browse and learn more details about restaurants and make reservations.  
+EmptyChairs is a clone of OpenTable, the popular restaurant reservation app. All visitors can browse and learn more details about restaurants and make reservations.  Logged in users can leave reviews (create, edit, and delete) of restaurants where they have dined, and save favorite restaurants to their user profile page.  
 
 Try it live [here!](https://emptychairs.herokuapp.com/#/)  
 (click `Signin` then `Demo signin` for Demo User)
@@ -23,9 +23,11 @@ With EmptyChairs users can:
 
 - Create an account
 - Scroll through available restaurants on the homepage seeing a photo, name, and average rating for each restaurant
-- Click on a desired restaurant to go to its show page where they can read an overview and access the menu
+- Click on a desired restaurant to go to its show page where they can read an overview, access the menu, and read reviews
 - Use a form on the restaurant's show page to make a reservation at that restaurant
 - View a confirmation page with their reservation details which includes a link to return to the restaurant's show page 
+- View a list of all reservations on their profile page, including a link to a leave a review for any of those restaurants 
+- Toggle a button on the restaurant show page to save/unsave favorites, and view a list of all those favorites on their profile page 
 
 ## Coding Challenges
 
@@ -86,7 +88,7 @@ SOLUTION: I used ternary logic to display the first name/last name input fields 
 
 ## Future Implementations
 
-- Logged in users able to create, read, update, and delete reviews of restaurants where they have dined
-- Logged in users able to toggle "saves" of their favorite restaurants
-- User profile show page that lists upcoming and completed reservations and saved restaurants
 - Restaurant search bar across splash photo at top of homepage
+- Loyalty program where users earn/redeem points for completed reservations
+- Variety of user and/or restaurant-uploaded photos viewable on the restaurant show page
+- On click ("get directions" button) user is taken to Google maps with current location and restaurant location pre-filled
