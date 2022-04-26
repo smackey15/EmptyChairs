@@ -64,9 +64,9 @@ class ReservationShow extends React.Component {
                             </div>
                 <div className="bottom-details">
                     <h3>Who's going?</h3>
-                    <span className='badge-circle'><p className='initial'>{this.props.reservation.first_name[0]} {this.props.reservation.last_name[0]}</p></span>
-                    <p>{this.props.reservation.first_name} {this.props.reservation.last_name[0]}.</p> 
-                    <p>Host</p>
+                    <span className='badge-circle'><p className='res-initial'>{this.props.reservation.first_name[0]}{this.props.reservation.last_name[0]}</p></span>
+                    <p id="name">{this.props.reservation.first_name} {this.props.reservation.last_name[0]}.</p> 
+                    <p id="host">Host</p>
                 </div>
                 <br />
                 <br />
