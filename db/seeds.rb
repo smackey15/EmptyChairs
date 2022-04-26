@@ -8,9 +8,17 @@
 
 require "open-uri"
 
-User.create(first_name: "Edwin", last_name: "T", username: "Ed", password: "123456")
 User.create(first_name: "Hungry", last_name: "Foodie", username: "hungry", password: "foodie")
-User.create(first_name: "Sean", last_name: "Mackey", username: "sean", password: "123456")
+User.create(first_name: "Matthew", last_name: "C", username: "matthew", password: "123456")
+User.create(first_name: "Alexander", last_name: "C", username: "alexander", password: "123456")
+User.create(first_name: "Edwin", last_name: "T", username: "ed", password: "123456")
+User.create(first_name: "Brooke", last_name: "MT", username: "brooke", password: "123456")
+User.create(first_name: "Aiden", last_name: "T", username: "aiden", password: "123456")
+User.create(first_name: "Simon", last_name: "E", username: "simon", password: "123456")
+User.create(first_name: "Cathy", last_name: "T", username: "cathy", password: "123456")
+User.create(first_name: "Jack", last_name: "M", username: "jack", password: "123456")
+User.create(first_name: "Betsy", last_name: "FM", username: "betsy", password: "123456")
+
 
 rest1 = Restaurant.create(name: "Westville - Chelsea", overview: "Westville believes in using fresh, flavorful ingredients to create simple dishes. Guests won't find pretension or unnecessary flare here. Instead, they can relax in a casual, low-key environment while indulging in great food. Located in lower Manhattan, the restaurant is conveniently close to numerous hot spots. Stop in for a quick bite with coworkers or head out for dinner with the family.
 Westville's menu features burgers, sandwiches, salads and more. Favorites include the fresh market sides, kale salad and grilled salmon plate. Beer and wine selections complete the meal. Westville has a bakery as well where it produces freshly baked goods for dessert or breakfast. Westville's delivery and takeout services ensure that you can enjoy their dishes at home or during a special event.", address: "246 W 18th St New York, NY 10011", menu: "https://westvillenyc.com/menu/dinner-2/")
