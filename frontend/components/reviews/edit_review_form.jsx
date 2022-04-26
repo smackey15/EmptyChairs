@@ -72,13 +72,13 @@ class EditReviewForm extends React.Component {
                     })
                 }
 
-            if (this.state.nickCount < 4) {
+            if (this.state.nickCount < 5) {
                 document.getElementById("current-nick").style.color='#b8222d'
             } else {
                 document.getElementById("current-nick").style.color='gray'
                 }
 
-            if (this.state.nickCount < 4) {
+            if (this.state.nickCount < 5) {
                 document.getElementsByClassName("nick")[0].style.outlineColor='#b8222d'
             } else {
                 document.getElementsByClassName("nick")[0].style.outlineColor='lightblue'

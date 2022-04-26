@@ -16,14 +16,10 @@ class CreateReviewForm extends React.Component {
             characterCount: 0,
             nickCount: 0
         }
-        // if (this.state.characterCount < 50) {
-        //     this.state.characterCount.css('color', '#da3743');
-        // }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeRating = this.changeRating.bind(this);
     }
-
 
     componentDidMount() {
         if (!this.props.restaurant) {
@@ -43,13 +39,13 @@ class CreateReviewForm extends React.Component {
                     })
                 }
 
-            if (this.state.characterCount < 49) {
+            if (this.state.characterCount < 50) {
             document.getElementsByClassName("current-box")[0].style.color='#b8222d'
                 } else {
             document.getElementsByClassName("current-box")[0].style.color='gray'        
                 }
             
-            if ((this.state.characterCount >= 1) && (this.state.characterCount < 49)) {
+            if ((this.state.characterCount >= 1) && (this.state.characterCount < 50)) {
                 document.getElementsByClassName("body-box")[0].style.outlineColor="#b8222d"
             } else {
                 document.getElementsByClassName("body-box")[0].style.outlineColor="lightblue"
@@ -61,13 +57,13 @@ class CreateReviewForm extends React.Component {
                     })
                 }
 
-            if (this.state.nickCount < 4) {
+            if (this.state.nickCount < 5) {
                 document.getElementById("current-nick").style.color='#b8222d'
             } else {
                 document.getElementById("current-nick").style.color='gray'
             }
 
-            if (this.state.nickCount < 4) {
+            if (this.state.nickCount < 5) {
                 document.getElementsByClassName("nick")[0].style.outlineColor='#b8222d'
             } else {
                 document.getElementsByClassName("nick")[0].style.outlineColor='lightblue'

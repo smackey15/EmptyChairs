@@ -4,6 +4,7 @@ import {AiFillCheckCircle} from "react-icons/ai";
 import {HiOutlineUser} from "react-icons/hi"
 import {AiOutlineCalendar} from "react-icons/ai"
 import {AiFillRead} from "react-icons/ai"
+import {FaLocationArrow} from "react-icons/fa"
 
 
 class ReservationShow extends React.Component {
@@ -47,15 +48,19 @@ class ReservationShow extends React.Component {
                                             <AiFillRead className="browse-icon" /> 
                                             <div className="browse-words">
                                                 <span className="browse-menu">Browse menu</span>
-                                                <span>Restaurant's profile</span>
+                                                <span className="rest-profile">Restaurant's profile</span>
                                             </div>
                                         </div>
                                     </button>
                                 </Link>
-                                <Link to={`/restaurants/${this.props.reservation.restaurant_id}`}><button className="directions"><AiFillRead className="browse-icon" /> Get directions
+                                <a href="https://www.google.com/maps/@40.7240704,-73.695232,14z?hl=en&authuser=0" target="_blank">
+                                    <button className="directions">
+                                        <div className="direct-all">
+                                            <FaLocationArrow className="direct-icon" /> 
+                                            <span className="get-direct">Get directions</span>
+                                        </div>
                                 <br />
-                                </button></Link>
-                                {/* <p>Get Directions</p> */}
+                                </button></a>
                             </div>
                 <div className="bottom-details">
                     <h3>Who's going?</h3>

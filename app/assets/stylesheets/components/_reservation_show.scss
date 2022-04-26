@@ -11,6 +11,8 @@
 .confirm-all {
     display: flex;
     flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 4px;
 }
 
 .toptwo {
@@ -75,7 +77,7 @@
     padding-left: 20%;
 }
 
-.browse-all {
+.browse-all, .direct-all {
     display: flex;
     padding-left: 15%;
 }
@@ -86,8 +88,23 @@
     padding-top: 5px;
 }
 
-.browse-menu {
+.browse-menu, .get-direct {
     text-align: left;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    font-size: 14px;
+}
+
+.get-direct {
+    padding-top: 25px;
+}
+
+.rest-profile {
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 14px;
+    padding-top: 5px;
 }
 
 .browse, .directions {
@@ -113,6 +130,14 @@
     padding-right: 5%;
 }
 
+.direct-icon {
+    zoom: 3;
+    color: #da3743;
+    padding-top: 8%;
+    padding-right: 10%;
+
+}
+
 .browse-link {
     padding-right: 20px;
 }
@@ -126,7 +151,6 @@
     border-left: solid 1px lightgray;
     padding-left: 5px;
     padding-right: 5px;
-
 }
 
 .bottom-details {
