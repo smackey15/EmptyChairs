@@ -8,7 +8,9 @@ const mSTP = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         reviews: Object.values(state.entities.reviews).filter(rev =>
-            rev.restaurant_id === ownProps.restaurant.id)
+            rev.restaurant_id === ownProps.restaurant.id),
+        currentUserReviews: Object.values(state.entities.reviews).filter(rev =>
+            rev.user_id === state.entities.users[state.session.id].id)
     }    
 }
 
