@@ -4,6 +4,11 @@ import { useHistory } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 import { RiChat2Line } from "react-icons/ri"
 
+function randomnum (min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max-min) + min);
+}
 
 const ReviewIndexItem = ({ review, currentUser, deleteReview, reviews }) => {
     let history = useHistory();
@@ -35,7 +40,7 @@ const ReviewIndexItem = ({ review, currentUser, deleteReview, reviews }) => {
                         <span className='badge-circle'><p className='initial'>{review.nickname[0].toUpperCase()}</p></span>
                         <span className='rev-nickname'>{review.nickname}</span>
                         <span className='rev-location'>New York</span>
-                        <span className='rev-count'><RiChat2Line/> {reviews.length} review(s)</span>
+                        <span className='rev-count'><RiChat2Line/> {randomnum (2, 13)} reviews</span>
                     </div>
                     <div className='rev-content'>
                         <StarRatings 

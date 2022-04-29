@@ -9,8 +9,10 @@ const mSTP = (state, ownProps) => {
         currentUser: state.entities.users[state.session.id],
         reviews: Object.values(state.entities.reviews).filter(rev =>
             rev.restaurant_id === ownProps.restaurant.id),
-        currentUserReviews: Object.values(state.entities.reviews).filter(rev =>
-            rev.user_id === state.entities.users[state.session.id]?.id)
+        // want to grab reviews so I can count how many reviews any user (not just current) has created...
+        // below only grabs currentuser's reviews:
+        // currentUserReviews: Object.values(state.entities.reviews).filter(rev =>
+        //     rev.user_id === state.entities.users[state.session.id]?.id)
     }    
 }
 
