@@ -5,6 +5,8 @@ EmptyChairs is a clone of OpenTable, the popular restaurant reservation app. All
 Try it live [here!](https://emptychairs.herokuapp.com/#/)  
 (click `Signin` then `Demo signin` for Demo User)
 
+![emptychairsgif](./emptychairsgif.gif) 
+
 ## Technologies, Libraries, APIs
 
 - Ruby on Rails for the backend
