@@ -26,12 +26,12 @@ With EmptyChairs users can:
 - Click on a desired restaurant to go to its show page where they can read an overview, access the menu, and read reviews
 - Use a form on the restaurant's show page to make a reservation at that restaurant
 - View a confirmation page with their reservation details which includes a link to return to the restaurant's show page 
-- View a list of all reservations on their profile page, including a link to a leave a review for any of those restaurants 
+- View a list of all reservations on their profile page, including a link to leave a review for any of those restaurants 
 - Toggle a button on the restaurant show page to save/unsave favorites, and view a list of all those favorites on their profile page 
 
 ## Coding Challenges
 
-- PROBLEM: The default result of a user hitting `Enter` while in a form is that it triggers the same action as mouse-clicking a link or a button will in that same form.  However, if the form has more than one link or button, hitting `Enter` will automatically trigger the action of whichever link or button comes first on the form.  Therefore, if a user hit `Enter` in the signup form/modal, it triggered the `Demo sigin` action rather than the `Sign in to an account` action below it.  I wanted to control the result of the `Enter` event rather then be stuck with default behavior.  
+PROBLEM: The default result of a user hitting `Enter` while in a form is that it triggers the same action as mouse-clicking a link or a button will in that same form.  However, if the form has more than one link or button, hitting `Enter` will automatically trigger the action of whichever link or button comes first on the form.  Therefore, if a user hit `Enter` in the signup form/modal, it triggered the `Demo sigin` action rather than the `Sign in to an account` action below it.  I wanted to control the result of the `Enter` event rather then be stuck with default behavior.  
 
 ![signin2](./signin2.png) 
 
@@ -45,7 +45,7 @@ SOLUTION:  By adding an inline function to the `<form>` tag I was able to dictat
                         <h2>Please enter your details to {this.props.formType}.</h2>
 ```
 
-- PROBLEM: I wanted the reservation form to be dynamic to be used by both visitors and logged in users.  I wanted it to pre-fill the first and last name for logged in users, since that information is already in the database, or prompt visitors to enter their first and last name.
+PROBLEM: I wanted the reservation form to be dynamic to be used by both visitors and logged in users.  I wanted it to pre-fill the first and last name for logged in users, since that information is already in the database, or prompt visitors to enter their first and last name.
 
 SOLUTION: I used ternary logic to display the first name/last name input fields in one of two ways, depending on whether there is a current user signed in or not.  If the former, the form grabs the logged in user's name and pre-fills it in these fields.  If the latter, I used the `placeholder` designation (instead of `value`) to prompt the visitor to enter their first and last name in these fields.  Also, by not requiring a `user_id` in the database or model for resrevations, and setting `belongs_to :user, optional: true` in the reservation model, a reservation can be successfully created and persist to the database with or without a user/user_id.
 
