@@ -44,7 +44,7 @@ const App = () => (
         <footer>
             <div>
                 <a href="https://github.com/smackey15/EmptyChairs" target="_blank"><FaGithub/></a>
-                <button><a href="https://smackey15.github.io/" target="_blank">Portfolio Website</a></button>
+                <button><a href="https://seanmackey.me/" target="_blank">Portfolio Website</a></button>
                 <a href="https://www.linkedin.com/in/sean-mackey123/" target="_blank"><FaLinkedin/></a>
             </div>
         </footer>
