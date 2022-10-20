@@ -16,7 +16,7 @@ let rando = randomstar (2.0, 5.0)
 
 const RestaurantDetail = ({ restaurant }) => {
     return(
-        <div>
+        <div className="restaurant-detail">
             <img className="photo-main-detail" src={restaurant.photoUrl} alt="" />
             <ul className="show-body">
                 <div className="mini-nav">

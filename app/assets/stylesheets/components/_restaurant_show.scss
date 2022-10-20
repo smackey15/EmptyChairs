@@ -1,3 +1,31 @@
 .restaurant-show-main {
     position: relative;
 }
+
+@media screen and (min-width: 600px) {
+    .restaurant-show-main {
+        position: relative;
+        display: grid;
+        grid-template-rows: auto;
+    }
+    
+    .restaurant-detail {
+        grid-row: 1;
+    }
+    
+    .favorite-form {
+        grid-row: 0;
+    
+    }
+    
+    .reservation-form {
+        grid-row: 3;
+    
+    }
+    
+    .rev-index-all {
+        grid-row: 4;
+        
+    }
+  }
+  
