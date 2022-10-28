@@ -1,14 +1,8 @@
-.restaurant-show-main {
-    position: relative;
-}
-
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 599px) {
     .restaurant-show-main {
-        position: relative;
         display: grid;
         grid-template-rows: auto;
     }
-    
     .restaurant-detail {
         grid-row: 1;
     }
@@ -27,5 +21,11 @@
         grid-row: 4;
         
     }
-  }
+}
+
+@media screen and (max-width: 600px) {
+    .restaurant-show-main {
+        position: relative;
+    }
+}
   
