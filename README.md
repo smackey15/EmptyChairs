@@ -27,7 +27,7 @@ With EmptyChairs users can:
 - Scroll through available restaurants on the homepage seeing a photo, name, and average rating for each restaurant
 - Click on a desired restaurant to go to its show page where they can read an overview, access the menu, and read reviews
 - Use a form on the restaurant's show page to make a reservation at that restaurant
-- View a confirmation page with their reservation details which includes a link to return to the restaurant's show page 
+- View a confirmation page with their reservation details which includes a link to return to the restaurant's show page and a link for directions. The directions link opens Google maps in a new tab with auto-filled starting point (user's current location) and destination (name and address of restaurant). 
 - View a list of all reservations on their profile page, including a link to leave a review for any of those restaurants 
 - Toggle a button on the restaurant show page to save/unsave favorites, and view a list of all those favorites on their profile page 
 
@@ -93,4 +93,3 @@ SOLUTION: I used ternary logic to display the first name/last name input fields 
 - Restaurant search bar across splash photo at top of homepage
 - Loyalty program where users earn/redeem points for completed reservations
 - Variety of user and/or restaurant-uploaded photos viewable on the restaurant show page
-- On click ("get directions" button) user is taken to Google maps with current location and restaurant location pre-filled
