@@ -53,7 +53,9 @@ class ReservationShow extends React.Component {
                                         </div>
                                     </button>
                                 </Link>
-                                <a href="https://www.google.com/maps/@40.7240704,-73.695232,14z?hl=en&authuser=0" target="_blank">
+                                {/* <a href="https://www.google.com/maps/@40.7240704,-73.695232,14z?hl=en&authuser=0" target="_blank"> */}
+                                <a href={`https://www.google.com/maps/dir/?api=1&destination=${this.props.reservation.restaurantName},${this.props.reservation.restaurantAddress}`} target="_blank" >
+                                {/* <a href="https://www.google.com/maps/dir/?api=1&amp;destination=9 East 18th Street, New York, NY 10003" target="_blank" > */}
                                     <button className="directions">
                                         <div className="direct-all">
                                             <FaLocationArrow className="direct-icon" /> 
