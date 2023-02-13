@@ -49,7 +49,7 @@ SOLUTION:  By adding an inline function to the `<form>` tag I was able to dictat
 
 PROBLEM: I wanted the reservation form to be dynamic to be used by both visitors and logged in users.  I wanted it to pre-fill the first and last name for logged in users, since that information is already in the database, or prompt visitors to enter their first and last name.
 
-SOLUTION: I used ternary logic to display the first name/last name input fields in one of two ways, depending on whether there is a current user signed in or not.  If the former, the form grabs the logged in user's name and pre-fills it in these fields.  If the latter, I used the `placeholder` designation (instead of `value`) to prompt the visitor to enter their first and last name in these fields.  Also, by not requiring a `user_id` in the database or model for resrevations, and setting `belongs_to :user, optional: true` in the reservation model, a reservation can be successfully created and persist to the database with or without a user/user_id.
+SOLUTION: I used ternary logic to display the first name/last name input fields in one of two ways, depending on whether there is a current user signed in or not.  If the former, the form grabs the logged in user's name and pre-fills it in these fields.  If the latter, I used the `placeholder` designation (instead of `value`) to prompt the visitor to enter their first and last name in these fields.  Also, by not requiring a `user_id` in the database or model for reservations, and setting `belongs_to :user, optional: true` in the reservation model, a reservation can be successfully created and persist to the database with or without a user/user_id.
 
 ```javascript
         const display = this.props.currentUser ? (
