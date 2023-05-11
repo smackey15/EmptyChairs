@@ -25,8 +25,6 @@ class CreateFavorite extends React.Component {
             } else {
                 this.setState({ isFavorite: false})
             }
-            console.log(this.state)
-            console.log(this.props)
         })
         } 
         this.props.fetchRestaurant(this.props.restaurantId)
