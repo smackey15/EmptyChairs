@@ -192,7 +192,7 @@ class CreateReviewForm extends React.Component {
                             <br />
                             <span id="min-text">Minimum 50 characters</span>
                             <div id="count-box">
-                                <span class="current-box">{this.state.characterCount} </span>
+                                <span className="current-box">{this.state.characterCount} </span>
                                 <span id="maximum-box">/ 2000 characters</span>
                             </div>
                     </div>
