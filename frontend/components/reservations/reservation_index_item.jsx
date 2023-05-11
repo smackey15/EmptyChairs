@@ -3,9 +3,17 @@ import { Link } from 'react-router-dom';
 import {HiOutlineUser} from "react-icons/hi"
 import {AiOutlineCalendar} from "react-icons/ai"
 import StarRatings from 'react-star-ratings';
+import { useHistory } from "react-router-dom";
+
 
 
 const ReservationIndexItem = ({ reservation }) => {
+    const history = useHistory()
+    const handleClick = (e) => {
+        e.preventDefault()
+        history.push(`/restaurants/${reservation.restaurant_id}/reviews/form`)
+    }
+
     return(
         <div>   
                 <Link to={`/reservations/${reservation.id}`} className="full-link">
@@ -20,7 +28,7 @@ const ReservationIndexItem = ({ reservation }) => {
                             <span className='res-date'>{reservation.date}</span>
                         </div>
                         <div className='review-with-stars'>
-                            <Link to={`/restaurants/${reservation.restaurant_id}/reviews/form`} className='review-link'><p className='review-link'>Leave a review</p></Link>
+                            <div onClick={handleClick} className='review-link'><p className='review-link'>Leave a review</p></div>
                             <StarRatings 
                                 starDimension="18px"
                                 starSpacing=".5px"
