@@ -102,9 +102,9 @@ class ReservationForm extends React.Component {
                         <br />
                         <select 
                             onChange={this.handleInput("party_size")}
-                            className="party-box">
+                            className="party-box" value={this.state.party_size}>
                             <option value="1">1</option>
-                            <option value="2" selected>2</option>
+                            <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
@@ -134,7 +134,7 @@ class ReservationForm extends React.Component {
                         <br />
                         <select 
                             onChange={this.handleInput("time")}
-                            className="time-box">
+                            className="time-box" value={this.state.time}>
                             <option value="11:00 AM">11:00 AM</option>
                             <option value="11:30 AM">11:30 AM</option>
                             <option value="12:00 PM">12:00 PM</option>
@@ -151,7 +151,7 @@ class ReservationForm extends React.Component {
                             <option value="5:30 PM">5:30 PM</option>
                             <option value="6:00 PM">6:00 PM</option>
                             <option value="6:30 PM">6:30 PM</option>
-                            <option value="7:00 PM" selected>7:00 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
                             <option value="7:30 PM">7:30 PM</option>
                             <option value="8:00 PM">8:00 PM</option>
                             <option value="8:30 PM">8:30 PM</option>
